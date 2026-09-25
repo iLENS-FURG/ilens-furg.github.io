@@ -1,7 +1,6 @@
 baseURL: "https://ilens-furg.github.io/"
 languageCode: "en-us"
 title: "iLENS — Internet through a Lens"
-theme: ""
 params:
   description: "Measuring, Understanding, and Engineering the Internet."
   tagline: "Internet through a Lens"
