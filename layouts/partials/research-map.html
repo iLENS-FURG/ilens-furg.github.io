@@ -1,3 +1,142 @@
-{{ $g := site.Data.generated.research_graph }}
-<section class="page-hero"><div class="container"><div class="eyebrow blue">iLENS KNOWLEDGE GRAPH</div><h1>Research Map</h1><p>Navigate the relationships between questions, projects, experiments, data, software, evidence, and publications.</p></div></section>
-<section class="section"><div class="container"><div class="graph-kpis"><div><strong>{{ len $g.nodes }}</strong><span>research objects</span></div><div><strong>{{ len $g.edges }}</strong><span>relationships</span></div><div><strong>{{ len site.Data.generated.research_questions }}</strong><span>research questions</span></div><div><strong>{{ len site.Data.generated.experiments }}</strong><span>experiments</span></div></div><div class="graph-stage"><div class="graph-intro"><div><div class="eyebrow blue">Explore by type</div><h2>One connected research system.</h2></div><div class="graph-filters"><button data-graph-filter="all" class="active">All</button><button data-graph-filter="project">Projects</button><button data-graph-filter="research-question">RQs</button><button data-graph-filter="experiment">Experiments</button><button data-graph-filter="dataset">Datasets</button><button data-graph-filter="publication">Papers</button><button data-graph-filter="person">People</button></div></div><div class="graph-cards">{{ range $g.nodes }}<a class="graph-card" data-graph-type="{{ .type }}" href="{{ .url | relURL }}"><span>{{ replace .type "-" " " }}</span><strong>{{ .label }}</strong><b>↗</b></a>{{ end }}</div></div><div class="evidence-flow research-map-lifecycle"><div>Research question</div><span>→</span><div>Method</div><span>→</span><div>Experiment</div><span>→</span><div>Dataset</div><span>→</span><div>Evidence</div><span>→</span><div>Claim</div><span>→</span><div>Publication</div></div></div></section>
+{{ $g := site.Data.generated.research_graph | default (dict) }}
+{{ $nodes := default (slice) $g.nodes }}
+{{ $edges := default (slice) $g.edges }}
+{{ $rqs := site.Data.generated.research_questions | default (slice) }}
+{{ $experiments := site.Data.generated.experiments | default (slice) }}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow blue">iLENS KNOWLEDGE GRAPH</div>
+    <h1>Research Map</h1>
+    <p>
+      Navigate the relationships between questions, projects, experiments,
+      data, software, evidence, and publications.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="graph-kpis">
+
+      <div>
+        <strong>{{ len $nodes }}</strong>
+        <span>research objects</span>
+      </div>
+
+      <div>
+        <strong>{{ len $edges }}</strong>
+        <span>relationships</span>
+      </div>
+
+      <div>
+        <strong>{{ len $rqs }}</strong>
+        <span>research questions</span>
+      </div>
+
+      <div>
+        <strong>{{ len $experiments }}</strong>
+        <span>experiments</span>
+      </div>
+
+    </div>
+
+    <div class="graph-stage">
+
+      <div class="graph-intro">
+
+        <div>
+          <div class="eyebrow blue">Explore by type</div>
+          <h2>One connected research system.</h2>
+        </div>
+
+        <div class="graph-filters">
+
+          <button
+            data-graph-filter="all"
+            class="active">
+            All
+          </button>
+
+          <button data-graph-filter="project">
+            Projects
+          </button>
+
+          <button data-graph-filter="research-question">
+            RQs
+          </button>
+
+          <button data-graph-filter="experiment">
+            Experiments
+          </button>
+
+          <button data-graph-filter="dataset">
+            Datasets
+          </button>
+
+          <button data-graph-filter="publication">
+            Papers
+          </button>
+
+          <button data-graph-filter="person">
+            People
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="graph-cards">
+
+        {{ range $nodes }}
+
+          <a
+            class="graph-card"
+            data-graph-type="{{ .type }}"
+            href="{{ .url | relURL }}">
+
+            <span>
+              {{ replace .type "-" " " }}
+            </span>
+
+            <strong>
+              {{ .label }}
+            </strong>
+
+            <b>↗</b>
+
+          </a>
+
+        {{ end }}
+
+      </div>
+
+    </div>
+
+    <div class="evidence-flow research-map-lifecycle">
+
+      <div>Research question</div>
+      <span>→</span>
+
+      <div>Method</div>
+      <span>→</span>
+
+      <div>Experiment</div>
+      <span>→</span>
+
+      <div>Dataset</div>
+      <span>→</span>
+
+      <div>Evidence</div>
+      <span>→</span>
+
+      <div>Claim</div>
+      <span>→</span>
+
+      <div>Publication</div>
+
+    </div>
+
+  </div>
+</section>

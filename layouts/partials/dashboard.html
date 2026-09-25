@@ -1,4 +1,12 @@
-{{ $people := site.Data.generated.people }}{{ $projects := site.Data.generated.projects }}{{ $pubs := site.Data.generated.publications }}{{ $inst := site.Data.generated.institutions }}{{ $grants := site.Data.generated.grants }}{{ $datasets := site.Data.generated.datasets }}{{ $software := site.Data.generated.software }}{{ $rq := site.Data.generated.research_questions }}{{ $exp := site.Data.generated.experiments }}
+{{ $people := site.Data.generated.people | default (slice) }}
+{{ $projects := site.Data.generated.projects | default (slice) }}
+{{ $pubs := site.Data.generated.publications | default (slice) }}
+{{ $inst := site.Data.generated.institutions | default (slice) }}
+{{ $grants := site.Data.generated.grants | default (slice) }}
+{{ $datasets := site.Data.generated.datasets | default (slice) }}
+{{ $software := site.Data.generated.software | default (slice) }}
+{{ $rq := site.Data.generated.research_questions | default (slice) }}
+{{ $exp := site.Data.generated.experiments | default (slice) }}
 <div class="dashboard-hero"><div class="eyebrow blue">iLENS RESEARCH SYSTEM</div><h1>Research Dashboard</h1><p>Indicators generated from the iLENS research knowledge base.</p></div>
 <div class="metric-grid dashboard-metrics"><div class="metric"><strong>{{ len $people }}</strong><span>People</span></div><div class="metric"><strong>{{ len $projects }}</strong><span>Projects</span></div><div class="metric"><strong>{{ len $pubs }}</strong><span>Publications</span></div><div class="metric"><strong>{{ len $inst }}</strong><span>Institutions</span></div><div class="metric"><strong>{{ len $datasets }}</strong><span>Datasets</span></div><div class="metric"><strong>{{ len $software }}</strong><span>Software</span></div></div>
 <div class="dashboard-grid"><section class="dashboard-card"><h2>Research areas</h2>{{ range site.Data.generated.research_areas }}<div class="bar-row"><span>{{ .title }}</span></div>{{ end }}</section><section class="dashboard-card"><h2>Research system</h2><div class="dashboard-stat"><strong>{{ len $grants }}</strong><span>grants</span></div><div class="dashboard-stat"><strong>{{ len $rq }}</strong><span>research questions</span></div><div class="dashboard-stat"><strong>{{ add (len $datasets) (len $software) }}</strong><span>datasets + software</span></div><div class="metric"><strong>{{ len $exp }}</strong><span>experiments</span></div></div></section></div>

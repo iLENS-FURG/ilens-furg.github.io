@@ -1,30 +1,343 @@
-{{ $id := .Params.entity_id }}{{ $p := index (where site.Data.generated.projects "id" $id) 0 }}
-{{ $role := default "lead" $p.research_role.type }}{{ $people := site.Data.generated.people }}{{ $inst := site.Data.generated.institutions }}{{ $grants := site.Data.generated.grants }}{{ $pubs := site.Data.generated.publications }}{{ $datasets := site.Data.generated.datasets }}{{ $software := site.Data.generated.software }}{{ $pubCount := 0 }}{{ range $pubs }}{{ if in (default (slice) .projects) $id }}{{ $pubCount = add $pubCount 1 }}{{ end }}{{ end }}
-<section class="project-hero project-hero-v10"><div class="container"><div class="eyebrow">{{ if eq $role "lead" }}iLENS-LED PROJECT{{ else if eq $role "co-lead" }}iLENS CO-LED PROJECT{{ else if eq $role "collaborator" }}COLLABORATIVE RESEARCH{{ else }}RESEARCH PARTNERSHIP{{ end }} · {{ replace $p.status "-" " " }}</div><h1>{{ $p.title }}</h1><p>{{ $p.subtitle }}</p><div class="chips">{{ range $p.areas }}<span>{{ replace . "-" " " }}</span>{{ end }}</div><div class="hero-actions">{{ range $p.repositories }}<a class="btn primary" href="https://github.com/{{ . }}" target="_blank" rel="noopener">GitHub ↗</a>{{ end }}</div></div></section>
-<section class="section"><div class="container detail-grid"><article>
-  <div class="project-role-callout {{ $role }}"><strong>{{ if eq $role "lead" }}iLENS-led research{{ else if eq $role "co-lead" }}iLENS co-led research{{ else if eq $role "collaborator" }}Collaborative research{{ else }}Research partnership{{ end }}</strong><span>{{ if eq $role "lead" }}iLENS leads this research initiative.{{ else if eq $role "co-lead" }}iLENS shares the research leadership.{{ else if eq $role "collaborator" }}iLENS contributes as a research collaborator.{{ else }}iLENS participates as a research partner.{{ end }}</span></div>
-  <div class="project-glance-grid"><div><span>STATUS</span><strong>{{ $p.status }}</strong></div><div><span>PEOPLE</span><strong>{{ len $p.people }}</strong></div><div><span>DATASETS</span><strong>{{ len $p.outputs.datasets }}</strong></div><div><span>SOFTWARE</span><strong>{{ len $p.outputs.software }}</strong></div><div><span>PUBLICATIONS</span><strong>{{ $pubCount }}</strong></div></div>
-  <div class="section-anchor"><div class="eyebrow blue">About the project</div><h2>What we are investigating.</h2><p>{{ $p.description }}</p></div>
+{{ $id := .Params.entity_id }}
+{{ $p := index (where site.Data.generated.projects "id" $id) 0 }}
 
-  {{ with $p.methods }}<h2>Approach</h2><div class="method-grid">{{ range . }}<div class="method-card">{{ . }}</div>{{ end }}</div>{{ end }}
+{{ $role := default "lead" $p.research_role.type }}
+{{ $people := site.Data.generated.people | default (slice) }}
+{{ $inst := site.Data.generated.institutions | default (slice) }}
+{{ $grants := site.Data.generated.grants | default (slice) }}
+{{ $pubs := site.Data.generated.publications | default (slice) }}
+{{ $datasets := site.Data.generated.datasets | default (slice) }}
+{{ $software := site.Data.generated.software | default (slice) }}
+{{ $rqs := site.Data.generated.research_questions | default (slice) }}
 
-  {{ with $p.research_questions }}
-  <h2>Research questions</h2>
-  <div class="rq-list">{{ range . }}{{ $rq := index (where site.Data.generated.research_questions "id" .) 0 }}{{ with $rq }}<div class="rq-card"><b>{{ .id }}</b><p>{{ .text }}</p></div>{{ end }}{{ end }}</div>
+{{ $projectDatasets := default (slice) $p.outputs.datasets }}
+{{ $projectSoftware := default (slice) $p.outputs.software }}
+
+{{ $pubCount := 0 }}
+{{ range $pubs }}
+  {{ if in (default (slice) .projects) $id }}
+    {{ $pubCount = add $pubCount 1 }}
   {{ end }}
+{{ end }}
 
-  {{ with $p.timeline }}<h2>Project timeline</h2><div class="timeline">{{ range . }}<div class="timeline-item"><b>{{ .date }}</b><span>{{ .label }}</span></div>{{ end }}</div>{{ end }}
+<section class="project-hero project-hero-v10">
+  <div class="container">
+    <div class="eyebrow">
+      {{ if eq $role "lead" }}
+        iLENS-LED PROJECT
+      {{ else if eq $role "co-lead" }}
+        iLENS CO-LED PROJECT
+      {{ else if eq $role "collaborator" }}
+        COLLABORATIVE RESEARCH
+      {{ else }}
+        RESEARCH PARTNERSHIP
+      {{ end }}
+      · {{ replace $p.status "-" " " }}
+    </div>
 
-  {{ if or $p.outputs.datasets $p.outputs.software }}<h2>Research outputs</h2><div class="relation-grid">
-    {{ range $p.outputs.datasets }}{{ $d := index (where $datasets "id" .) 0 }}{{ with $d }}<a class="relation-card" href="{{ "/data-software/#datasets" | relURL }}"><span class="output-kicker">DATASET</span><h3>{{ .title }}</h3><p>{{ .description }}</p><span class="learn">View data →</span></a>{{ end }}{{ end }}
-    {{ range $p.outputs.software }}{{ $s := index (where $software "id" .) 0 }}{{ with $s }}<a class="relation-card" href="{{ "/data-software/#software" | relURL }}"><span class="output-kicker">SOFTWARE</span><h3>{{ .title }}</h3><p>{{ .description }}</p><span class="learn">View software →</span></a>{{ end }}{{ end }}
-  </div>{{ end }}
+    <h1>{{ $p.title }}</h1>
+    <p>{{ $p.subtitle }}</p>
 
-  <h2>Publications</h2><div class="stack-list">{{ range $pubs }}{{ if in (default (slice) .projects) $id }}<a class="stack-row" href="{{ printf "/publications/%s/" .id | relURL }}"><span><b>{{ .title }}</b><small>{{ .year }} · {{ .venue }}</small></span><b>↗</b></a>{{ end }}{{ end }}{{ if eq $pubCount 0 }}<div class="notice">No publications are listed for this project yet.</div>{{ end }}</div>
-</article>
-<aside class="info-panel sticky-panel"><div class="sidebar-label">PROJECT</div><h3>Team</h3><div class="project-team">{{ range $p.people }}{{ $person := index (where $people "id" .) 0 }}{{ with $person }}<a class="team-chip" href="{{ printf "/people/%s/" .id | relURL }}"><img src="{{ .photo | relURL }}" alt=""><span>{{ .name.display }}</span></a>{{ end }}{{ end }}</div>
-<h3>Host institution</h3>{{ $host := index (where $inst "id" $p.institutions.host) 0 }}{{ with $host }}<a class="institution-inline institution-inline-card" href="{{ printf "/institutions/%s/" .id | relURL }}">{{ with .logo }}<img src="{{ .light | relURL }}" alt="">{{ end }}<strong>{{ .name.short }}</strong><span>↗</span></a>{{ end }}
-{{ with $p.institutions.collaborators }}<h3>Collaborating institutions</h3>{{ range . }}{{ $i := index (where $inst "id" .) 0 }}{{ with $i }}<a class="institution-inline institution-inline-card" href="{{ printf "/institutions/%s/" .id | relURL }}">{{ with .logo }}<img src="{{ .light | relURL }}" alt="">{{ end }}<strong>{{ .name.short }}</strong><span>↗</span></a>{{ end }}{{ end }}{{ end }}
-{{ with $p.researchers.collaborators }}<h3>Collaborators</h3><div class="collaborator-list">{{ range . }}<div class="collaborator-card"><div><strong>{{ .name }}</strong><span>{{ .institution }}</span></div>{{ with .url }}<a class="external-link" href="{{ . }}" target="_blank" rel="noopener" aria-label="External profile">↗</a>{{ end }}</div>{{ end }}</div>{{ end }}
-{{ with $p.funding.grants }}<h3>Funding</h3>{{ range . }}{{ $g := index (where $grants "id" .) 0 }}{{ with $g }}<div class="funding-row"><strong>{{ .title }}</strong></div>{{ end }}{{ end }}{{ end }}
-</aside></div></section>
+    <div class="chips">
+      {{ range $p.areas }}
+        <span>{{ replace . "-" " " }}</span>
+      {{ end }}
+    </div>
+
+    <div class="hero-actions">
+      {{ range $p.repositories }}
+        <a class="btn primary"
+           href="https://github.com/{{ . }}"
+           target="_blank"
+           rel="noopener">
+          GitHub ↗
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container detail-grid">
+
+    <article>
+
+      <div class="project-role-callout {{ $role }}">
+        <strong>
+          {{ if eq $role "lead" }}
+            iLENS-led research
+          {{ else if eq $role "co-lead" }}
+            iLENS co-led research
+          {{ else if eq $role "collaborator" }}
+            Collaborative research
+          {{ else }}
+            Research partnership
+          {{ end }}
+        </strong>
+
+        <span>
+          {{ if eq $role "lead" }}
+            iLENS leads this research initiative.
+          {{ else if eq $role "co-lead" }}
+            iLENS shares the research leadership.
+          {{ else if eq $role "collaborator" }}
+            iLENS contributes as a research collaborator.
+          {{ else }}
+            iLENS participates as a research partner.
+          {{ end }}
+        </span>
+      </div>
+
+      <div class="project-glance-grid">
+        <div>
+          <span>STATUS</span>
+          <strong>{{ $p.status }}</strong>
+        </div>
+
+        <div>
+          <span>PEOPLE</span>
+          <strong>{{ len (default (slice) $p.people) }}</strong>
+        </div>
+
+        <div>
+          <span>DATASETS</span>
+          <strong>{{ len $projectDatasets }}</strong>
+        </div>
+
+        <div>
+          <span>SOFTWARE</span>
+          <strong>{{ len $projectSoftware }}</strong>
+        </div>
+
+        <div>
+          <span>PUBLICATIONS</span>
+          <strong>{{ $pubCount }}</strong>
+        </div>
+      </div>
+
+      <div class="section-anchor">
+        <div class="eyebrow blue">About the project</div>
+        <h2>What we are investigating.</h2>
+        <p>{{ $p.description }}</p>
+      </div>
+
+      {{ with $p.methods }}
+        <h2>Approach</h2>
+
+        <div class="method-grid">
+          {{ range . }}
+            <div class="method-card">
+              {{ . }}
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with $p.research_questions }}
+        <h2>Research questions</h2>
+
+        <div class="rq-list">
+          {{ range . }}
+            {{ $rq := index (where $rqs "id" .) 0 }}
+
+            {{ with $rq }}
+              <div class="rq-card">
+                <b>{{ .id }}</b>
+                <p>{{ .text }}</p>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with $p.timeline }}
+        <h2>Project timeline</h2>
+
+        <div class="timeline">
+          {{ range . }}
+            <div class="timeline-item">
+              <b>{{ .date }}</b>
+              <span>{{ .label }}</span>
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ if or $projectDatasets $projectSoftware }}
+        <h2>Research outputs</h2>
+
+        <div class="relation-grid">
+
+          {{ range $projectDatasets }}
+            {{ $d := index (where $datasets "id" .) 0 }}
+
+            {{ with $d }}
+              <a class="relation-card"
+                 href="{{ "/data-software/#datasets" | relURL }}">
+                <span class="output-kicker">DATASET</span>
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+                <span class="learn">View data →</span>
+              </a>
+            {{ end }}
+          {{ end }}
+
+          {{ range $projectSoftware }}
+            {{ $s := index (where $software "id" .) 0 }}
+
+            {{ with $s }}
+              <a class="relation-card"
+                 href="{{ "/data-software/#software" | relURL }}">
+                <span class="output-kicker">SOFTWARE</span>
+                <h3>{{ .title }}</h3>
+                <p>{{ .description }}</p>
+                <span class="learn">View software →</span>
+              </a>
+            {{ end }}
+          {{ end }}
+
+        </div>
+      {{ end }}
+
+      <h2>Publications</h2>
+
+      <div class="stack-list">
+        {{ range $pubs }}
+          {{ if in (default (slice) .projects) $id }}
+            <a class="stack-row"
+               href="{{ printf "/publications/%s/" .id | relURL }}">
+              <span>
+                <b>{{ .title }}</b>
+                <small>{{ .year }} · {{ .venue }}</small>
+              </span>
+              <b>↗</b>
+            </a>
+          {{ end }}
+        {{ end }}
+
+        {{ if eq $pubCount 0 }}
+          <div class="notice">
+            No publications are listed for this project yet.
+          </div>
+        {{ end }}
+      </div>
+
+    </article>
+
+    <aside class="info-panel sticky-panel">
+
+      <div class="sidebar-label">PROJECT</div>
+
+      <h3>Team</h3>
+
+      <div class="project-team">
+        {{ range (default (slice) $p.people) }}
+
+          {{ $person := index (where $people "id" .) 0 }}
+
+          {{ with $person }}
+            <a class="team-chip"
+               href="{{ printf "/people/%s/" .id | relURL }}">
+              <img src="{{ .photo | relURL }}" alt="">
+              <span>{{ .name.display }}</span>
+            </a>
+          {{ end }}
+
+        {{ end }}
+      </div>
+
+      <h3>Host institution</h3>
+
+      {{ $host := index (where $inst "id" $p.institutions.host) 0 }}
+
+      {{ with $host }}
+        <a class="institution-inline institution-inline-card"
+           href="{{ printf "/institutions/%s/" .id | relURL }}">
+
+          {{ with .logo }}
+            <img src="{{ .light | relURL }}" alt="">
+          {{ end }}
+
+          <strong>{{ .name.short }}</strong>
+          <span>↗</span>
+        </a>
+      {{ end }}
+
+      {{ with $p.institutions.collaborators }}
+
+        <h3>Collaborating institutions</h3>
+
+        {{ range . }}
+
+          {{ $i := index (where $inst "id" .) 0 }}
+
+          {{ with $i }}
+            <a class="institution-inline institution-inline-card"
+               href="{{ printf "/institutions/%s/" .id | relURL }}">
+
+              {{ with .logo }}
+                <img src="{{ .light | relURL }}" alt="">
+              {{ end }}
+
+              <strong>{{ .name.short }}</strong>
+              <span>↗</span>
+            </a>
+          {{ end }}
+
+        {{ end }}
+
+      {{ end }}
+
+      {{ with $p.researchers.collaborators }}
+
+        <h3>Collaborators</h3>
+
+        <div class="collaborator-list">
+
+          {{ range . }}
+
+            <div class="collaborator-card">
+              <div>
+                <strong>{{ .name }}</strong>
+                <span>{{ .institution }}</span>
+              </div>
+
+              {{ with .url }}
+                <a class="external-link"
+                   href="{{ . }}"
+                   target="_blank"
+                   rel="noopener"
+                   aria-label="External profile">
+                  ↗
+                </a>
+              {{ end }}
+            </div>
+
+          {{ end }}
+
+        </div>
+
+      {{ end }}
+
+      {{ with $p.funding.grants }}
+
+        <h3>Funding</h3>
+
+        {{ range . }}
+
+          {{ $g := index (where $grants "id" .) 0 }}
+
+          {{ with $g }}
+            <div class="funding-row">
+              <strong>{{ .title }}</strong>
+            </div>
+          {{ end }}
+
+        {{ end }}
+
+      {{ end }}
+
+    </aside>
+
+  </div>
+</section>

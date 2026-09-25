@@ -1,1 +1,177 @@
-{{ $id := .Params.entity_id }}{{ $p := index (where site.Data.generated.people "id" $id) 0 }}{{ $inst := site.Data.generated.institutions }}<section class="page-head"><div class="container"><div class="person-detail"><img class="person-large" src="{{ $p.photo }}" alt="{{ $p.name.display }}"><div><div class="eyebrow blue">iLENS {{ $p.status }}</div><h1>{{ $p.name.display }}</h1><p>{{ $p.title }} · {{ $p.role }}</p><div class="social-links">{{ with $p.links.google_scholar }}<a href="{{ . }}" target="_blank">Google Scholar</a>{{ end }}{{ with $p.links.linkedin }}<a href="{{ . }}" target="_blank">LinkedIn</a>{{ end }}{{ with $p.links.github }}<a href="{{ . }}" target="_blank">GitHub</a>{{ end }}{{ with $p.links.researchgate }}<a href="{{ . }}" target="_blank">ResearchGate</a>{{ end }}{{ with $p.links.orcid }}<a href="{{ . }}" target="_blank">ORCID</a>{{ end }}{{ with $p.links.website }}<a href="{{ . }}" target="_blank">Personal website</a>{{ end }}</div></div></div></div></section><section class="section"><div class="container narrow"><div class="metric-grid"><div class="metric"><strong>{{ len $p.projects }}</strong><span>Projects</span></div><div class="metric"><strong>{{ len $p.research.areas }}</strong><span>Research areas</span></div><div class="metric"><strong>{{ len $p.affiliations }}</strong><span>Affiliations</span></div><div class="metric"><strong>{{ $p.status }}</strong><span>Status</span></div></div><h2>About</h2><p>{{ $p.bio }}</p><h2>Research areas</h2><div class="chips">{{ range $p.research.areas }}<span>{{ replace . "-" " " }}</span>{{ end }}</div><h2>Projects</h2><div class="relation-grid">{{ range $p.projects }}{{ $project := index (where site.Data.generated.projects "id" .) 0 }}{{ with $project }}<a class="relation-card" href="/projects/{{ .id }}/"><h3>{{ .title }}</h3><p>{{ .subtitle }}</p></a>{{ end }}{{ end }}</div><h2>Affiliations</h2>{{ range $p.affiliations }}{{ $i := index (where $inst "id" .institution) 0 }}{{ with $i }}<div class="mini-institution"><img src="{{ .logo.light }}" alt=""><p><strong>{{ .name.short }}</strong><br>{{ .role }}</p></div>{{ end }}{{ end }}</div></section>
+{{ $id := .Params.entity_id }}
+{{ $p := index (where site.Data.generated.people "id" $id) 0 }}
+
+{{ $inst := site.Data.generated.institutions | default (slice) }}
+{{ $projects := default (slice) $p.projects }}
+{{ $researchAreas := default (slice) $p.research.areas }}
+{{ $affiliations := default (slice) $p.affiliations }}
+
+<section class="page-head">
+  <div class="container">
+    <div class="person-detail">
+
+      <img
+        class="person-large"
+        src="{{ $p.photo }}"
+        alt="{{ $p.name.display }}">
+
+      <div>
+
+        <div class="eyebrow blue">
+          iLENS {{ $p.status }}
+        </div>
+
+        <h1>{{ $p.name.display }}</h1>
+
+        <p>{{ $p.title }} · {{ $p.role }}</p>
+
+        <div class="social-links">
+
+          {{ with $p.links.google_scholar }}
+            <a href="{{ . }}" target="_blank">
+              Google Scholar
+            </a>
+          {{ end }}
+
+          {{ with $p.links.linkedin }}
+            <a href="{{ . }}" target="_blank">
+              LinkedIn
+            </a>
+          {{ end }}
+
+          {{ with $p.links.github }}
+            <a href="{{ . }}" target="_blank">
+              GitHub
+            </a>
+          {{ end }}
+
+          {{ with $p.links.researchgate }}
+            <a href="{{ . }}" target="_blank">
+              ResearchGate
+            </a>
+          {{ end }}
+
+          {{ with $p.links.orcid }}
+            <a href="{{ . }}" target="_blank">
+              ORCID
+            </a>
+          {{ end }}
+
+          {{ with $p.links.website }}
+            <a href="{{ . }}" target="_blank">
+              Personal website
+            </a>
+          {{ end }}
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+
+    <div class="metric-grid">
+
+      <div class="metric">
+        <strong>{{ len $projects }}</strong>
+        <span>Projects</span>
+      </div>
+
+      <div class="metric">
+        <strong>{{ len $researchAreas }}</strong>
+        <span>Research areas</span>
+      </div>
+
+      <div class="metric">
+        <strong>{{ len $affiliations }}</strong>
+        <span>Affiliations</span>
+      </div>
+
+      <div class="metric">
+        <strong>{{ $p.status }}</strong>
+        <span>Status</span>
+      </div>
+
+    </div>
+
+    <h2>About</h2>
+    <p>{{ $p.bio }}</p>
+
+    {{ if $researchAreas }}
+
+      <h2>Research areas</h2>
+
+      <div class="chips">
+
+        {{ range $researchAreas }}
+          <span>{{ replace . "-" " " }}</span>
+        {{ end }}
+
+      </div>
+
+    {{ end }}
+
+    {{ if $projects }}
+
+      <h2>Projects</h2>
+
+      <div class="relation-grid">
+
+        {{ range $projects }}
+
+          {{ $project := index (where site.Data.generated.projects "id" .) 0 }}
+
+          {{ with $project }}
+
+            <a
+              class="relation-card"
+              href="{{ printf "/projects/%s/" .id | relURL }}">
+
+              <h3>{{ .title }}</h3>
+              <p>{{ .subtitle }}</p>
+
+            </a>
+
+          {{ end }}
+
+        {{ end }}
+
+      </div>
+
+    {{ end }}
+
+    {{ if $affiliations }}
+
+      <h2>Affiliations</h2>
+
+      {{ range $affiliation := $affiliations }}
+
+        {{ $i := index (where $inst "id" $affiliation.institution) 0 }}
+
+        {{ with $i }}
+
+          <div class="mini-institution">
+
+            <img
+              src="{{ .logo.light | relURL }}"
+              alt="">
+
+            <p>
+              <strong>{{ .name.short }}</strong><br>
+              {{ $affiliation.role }}
+            </p>
+
+          </div>
+
+        {{ end }}
+
+      {{ end }}
+
+    {{ end }}
+
+  </div>
+</section>

@@ -1,5 +1,5 @@
 baseURL: "https://ilens-furg.github.io/"
-languageCode: "en-us"
+locale: "en-us"
 title: "iLENS — Internet through a Lens"
 params:
   description: "Measuring, Understanding, and Engineering the Internet."
@@ -41,3 +41,5 @@ outputs:
   home: [HTML]
   section: [HTML]
   page: [HTML]
+
+taxonomies: {}

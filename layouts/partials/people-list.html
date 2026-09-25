@@ -1,1 +1,91 @@
-{{ $people := site.Data.generated.people | default (slice) }}<div class="filter-bar"><input data-filter-input placeholder="Search people…" aria-label="Search people"><select data-filter-select data-filter-key="role"><option value="all">All roles</option><option value="faculty">Faculty</option><option value="researcher">Researchers</option><option value="phd-student">PhD students</option><option value="msc-student">MSc students</option><option value="undergraduate">Undergraduate</option><option value="alumni">Alumni</option></select><select data-filter-select data-filter-key="status"><option value="all">Current & alumni</option><option value="active">Current</option><option value="alumni">Alumni</option></select><span class="filter-count" data-filter-count></span></div><div class="people-grid">{{ range $people }}<a data-filter-item data-role="{{ .role }}" data-status="{{ .status }}" data-search="{{ .name.display }} {{ .name.full }} {{ .role }} {{ delimit .research.areas " " }}" class="person-card person-card-v10" href="{{ printf "/people/%s/" .id | relURL }}"><div class="person-photo-wrap"><img src="{{ .photo | relURL }}" alt="{{ .name.display }}"><span class="person-status {{ .status }}">{{ .status }}</span></div><h3>{{ .name.display }}</h3><p>{{ replace .role "-" " " }}</p><div class="person-areas">{{ range first 3 .research.areas }}<span>{{ replace . "-" " " }}</span>{{ end }}</div><b class="card-arrow">↗</b></a>{{ end }}</div><div class="search-empty" data-filter-empty>No people match your search.</div>
+{{ $people := site.Data.generated.people | default (slice) }}
+
+<div class="filter-bar">
+
+  <input
+    data-filter-input
+    placeholder="Search people…"
+    aria-label="Search people">
+
+  <select
+    data-filter-select
+    data-filter-key="role">
+
+    <option value="all">All roles</option>
+    <option value="faculty">Faculty</option>
+    <option value="researcher">Researchers</option>
+    <option value="phd-student">PhD students</option>
+    <option value="msc-student">MSc students</option>
+    <option value="undergraduate">Undergraduate</option>
+    <option value="alumni">Alumni</option>
+
+  </select>
+
+  <select
+    data-filter-select
+    data-filter-key="status">
+
+    <option value="all">Current & alumni</option>
+    <option value="active">Current</option>
+    <option value="alumni">Alumni</option>
+
+  </select>
+
+  <span
+    class="filter-count"
+    data-filter-count>
+  </span>
+
+</div>
+
+<div class="people-grid">
+
+  {{ range $person := $people }}
+
+    {{ $researchAreas := default (slice) $person.research.areas }}
+
+    <a
+      data-filter-item
+      data-role="{{ $person.role }}"
+      data-status="{{ $person.status }}"
+      data-search="{{ $person.name.display }} {{ $person.name.full }} {{ $person.role }} {{ delimit $researchAreas " " }}"
+      class="person-card person-card-v10"
+      href="{{ printf "/people/%s/" $person.id | relURL }}">
+
+      <div class="person-photo-wrap">
+
+        <img
+          src="{{ $person.photo | relURL }}"
+          alt="{{ $person.name.display }}">
+
+        <span class="person-status {{ $person.status }}">
+          {{ $person.status }}
+        </span>
+
+      </div>
+
+      <h3>{{ $person.name.display }}</h3>
+
+      <p>{{ replace $person.role "-" " " }}</p>
+
+      {{ if $researchAreas }}
+        <div class="person-areas">
+          {{ range first 3 $researchAreas }}
+            <span>{{ replace . "-" " " }}</span>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      <b class="card-arrow">↗</b>
+
+    </a>
+
+  {{ end }}
+
+</div>
+
+<div
+  class="search-empty"
+  data-filter-empty>
+  No people match your search.
+</div>
