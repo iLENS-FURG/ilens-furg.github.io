@@ -1,0 +1,127 @@
+{
+  "version": "v12",
+  "count": 3,
+  "data": [
+    {
+      "id": "ana-silva",
+      "name": {
+        "full": "Ana Silva",
+        "display": "Ana Silva"
+      },
+      "status": "active",
+      "role": "phd-student",
+      "title": "PhD Student",
+      "bio": "Researching routing security and BGP measurement.",
+      "affiliations": [
+        {
+          "institution": "furg",
+          "role": "phd-student",
+          "start": "2026-08",
+          "end": null
+        }
+      ],
+      "research": {
+        "areas": [
+          "routing-security",
+          "bgp"
+        ]
+      },
+      "projects": [
+        "routing-security"
+      ],
+      "links": {
+        "google_scholar": null,
+        "linkedin": null,
+        "github": null,
+        "researchgate": null,
+        "orcid": null,
+        "website": null
+      },
+      "photo": "/images/people/ana-silva.svg",
+      "persistent_id": "ilens:person:ana-silva",
+      "identifiers": {}
+    },
+    {
+      "id": "joao-souza",
+      "name": {
+        "full": "João Souza",
+        "display": "João Souza"
+      },
+      "status": "alumni",
+      "role": "phd-student",
+      "title": "PhD Student",
+      "bio": "Former iLENS researcher.",
+      "affiliations": [
+        {
+          "institution": "furg",
+          "role": "phd-student",
+          "start": "2023-03",
+          "end": "2026-02"
+        }
+      ],
+      "projects": [
+        "ixpert"
+      ],
+      "links": {
+        "google_scholar": null,
+        "linkedin": null,
+        "github": null,
+        "researchgate": null,
+        "orcid": null,
+        "website": null
+      },
+      "photo": "/images/people/joao-souza.svg",
+      "persistent_id": "ilens:person:joao-souza",
+      "identifiers": {}
+    },
+    {
+      "id": "pedro-marcos",
+      "name": {
+        "full": "Pedro de Botelho Marcos",
+        "display": "Pedro Marcos"
+      },
+      "status": "active",
+      "role": "faculty",
+      "title": "Assistant Professor",
+      "bio": "Measuring, understanding, and engineering the Internet.",
+      "affiliations": [
+        {
+          "institution": "furg",
+          "role": "professor",
+          "start": "2020-01",
+          "end": null
+        }
+      ],
+      "research": {
+        "areas": [
+          "internet-measurement",
+          "internet-architecture",
+          "routing",
+          "routing-security",
+          "interconnection",
+          "network-operations"
+        ]
+      },
+      "projects": [
+        "ixpert",
+        "ixp-depeering",
+        "routing-security"
+      ],
+      "links": {
+        "google_scholar": null,
+        "linkedin": null,
+        "github": null,
+        "researchgate": null,
+        "orcid": null,
+        "website": null
+      },
+      "photo": "/images/people/pedro-marcos.svg",
+      "persistent_id": "ilens:person:pedro-marcos",
+      "identifiers": {
+        "orcid": null,
+        "openalex": null,
+        "github": "pedromarcos"
+      }
+    }
+  ]
+}

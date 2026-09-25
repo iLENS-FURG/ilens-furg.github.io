@@ -1,0 +1,11 @@
+{{ $items := site.Data.generated.institutions | default (slice) }}
+<div class="filter-bar"><input data-filter-input placeholder="Search institutions…"><select data-filter-select data-filter-key="type"><option value="all">All types</option><option value="university">Universities</option><option value="funder">Funders</option><option value="research-organization">Research organizations</option><option value="internet-infrastructure">Internet infrastructure</option></select><span class="filter-count" data-filter-count></span></div>
+<div class="institution-grid">
+{{ range $items }}
+<a class="institution-card" data-filter-item data-type="{{ .type }}" data-search="{{ .name.short }} {{ .name.official }} {{ .country }}" href="{{ printf "/institutions/%s/" .id | relURL }}">
+  <div class="institution-logo">{{ with .logo.light }}<img src="{{ . | relURL }}" alt="{{ $.name.short }} logo">{{ else }}<span>{{ substr .name.short 0 1 }}</span>{{ end }}</div>
+  <div><h3>{{ .name.short }}</h3><p>{{ .name.official }}</p><small>{{ .country }}</small></div>
+</a>
+{{ end }}
+</div>
+<div class="search-empty" data-filter-empty>No institutions match your search.</div>

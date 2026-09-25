@@ -1,0 +1,153 @@
+[
+  {
+    "id": "cnpq",
+    "name": {
+      "official": "Conselho Nacional de Desenvolvimento Científico e Tecnológico",
+      "short": "CNPq"
+    },
+    "type": "funder",
+    "country": "BR",
+    "links": {
+      "website": "https://www.gov.br/cnpq"
+    },
+    "identifiers": {
+      "ror": null,
+      "openalex": null
+    },
+    "logo": {
+      "light": "/images/institutions/cnpq.svg",
+      "dark": "/images/institutions/cnpq-white.svg"
+    },
+    "persistent_id": "ilens:institution:cnpq"
+  },
+  {
+    "id": "furg",
+    "name": {
+      "official": "Universidade Federal do Rio Grande",
+      "short": "FURG"
+    },
+    "type": "university",
+    "country": "BR",
+    "city": "Rio Grande",
+    "state": "RS",
+    "identifiers": {
+      "ror": "",
+      "openalex": null
+    },
+    "links": {
+      "website": "https://www.furg.br"
+    },
+    "logo": {
+      "light": "/images/institutions/furg.svg",
+      "dark": "/images/institutions/furg-white.svg"
+    },
+    "persistent_id": "ilens:institution:furg"
+  },
+  {
+    "id": "isoc",
+    "name": {
+      "official": "Internet Society",
+      "short": "Internet Society"
+    },
+    "type": "research-organization",
+    "country": "US",
+    "links": {
+      "website": "https://www.internetsociety.org"
+    },
+    "identifiers": {
+      "ror": null,
+      "openalex": null
+    },
+    "logo": {
+      "light": "/images/institutions/isoc.svg",
+      "dark": "/images/institutions/isoc-white.svg"
+    },
+    "persistent_id": "ilens:institution:isoc"
+  },
+  {
+    "id": "ixbr",
+    "name": {
+      "official": "IX.br",
+      "short": "IX.br"
+    },
+    "type": "internet-infrastructure",
+    "country": "BR",
+    "links": {
+      "website": "https://ix.br"
+    },
+    "identifiers": {
+      "ror": null,
+      "openalex": null
+    },
+    "logo": {
+      "light": "/images/institutions/ixbr.svg",
+      "dark": "/images/institutions/ixbr-white.svg"
+    },
+    "persistent_id": "ilens:institution:ixbr"
+  },
+  {
+    "id": "lacnic",
+    "name": {
+      "official": "Latin America and Caribbean Internet Addresses Registry",
+      "short": "LACNIC"
+    },
+    "type": "research-organization",
+    "country": "UY",
+    "links": {
+      "website": "https://www.lacnic.net"
+    },
+    "identifiers": {
+      "ror": null,
+      "openalex": null
+    },
+    "logo": {
+      "light": "/images/institutions/lacnic.svg",
+      "dark": "/images/institutions/lacnic-white.svg"
+    },
+    "persistent_id": "ilens:institution:lacnic"
+  },
+  {
+    "id": "qmul",
+    "name": {
+      "official": "Queen Mary University of London",
+      "short": "QMUL"
+    },
+    "type": "university",
+    "country": "GB",
+    "links": {
+      "website": "https://www.qmul.ac.uk"
+    },
+    "identifiers": {
+      "ror": null,
+      "openalex": null
+    },
+    "logo": {
+      "light": "/images/institutions/qmul.svg",
+      "dark": "/images/institutions/qmul-white.svg"
+    },
+    "persistent_id": "ilens:institution:qmul"
+  },
+  {
+    "id": "ufrgs",
+    "name": {
+      "official": "Universidade Federal do Rio Grande do Sul",
+      "short": "UFRGS"
+    },
+    "type": "university",
+    "country": "BR",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "links": {
+      "website": "https://www.ufrgs.br"
+    },
+    "identifiers": {
+      "ror": null,
+      "openalex": null
+    },
+    "logo": {
+      "light": "/images/institutions/ufrgs.svg",
+      "dark": "/images/institutions/ufrgs-white.svg"
+    },
+    "persistent_id": "ilens:institution:ufrgs"
+  }
+]

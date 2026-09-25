@@ -1,0 +1,344 @@
+[
+  {
+    "id": "aspa",
+    "title": "ASPA",
+    "subtitle": "Measuring and evaluating ASPA deployment and verification in Internet routing.",
+    "status": "active",
+    "period": {
+      "start": null,
+      "end": null
+    },
+    "lead": null,
+    "research_role": {
+      "type": "collaborator",
+      "organization": "ilens"
+    },
+    "people": [
+      "pedro-marcos"
+    ],
+    "institutions": {
+      "host": "furg",
+      "collaborators": []
+    },
+    "researchers": {
+      "collaborators": []
+    },
+    "funding": {
+      "grants": []
+    },
+    "areas": [
+      "routing-security",
+      "bgp",
+      "rpki"
+    ],
+    "repositories": [],
+    "website": {
+      "featured": false,
+      "hero": "/images/projects/routing-security.svg"
+    },
+    "description": "Collaborative research on ASPA deployment, verification, and operational implications for Internet routing security.",
+    "research_questions": [],
+    "outputs": {
+      "software": [],
+      "datasets": []
+    },
+    "methods": [
+      "ASPA verification",
+      "BGP telemetry",
+      "RPKI analysis"
+    ],
+    "timeline": [],
+    "persistent_id": "ilens:project:aspa"
+  },
+  {
+    "id": "ixp-depeering",
+    "title": "IXP Depeering",
+    "subtitle": "Measuring the evolution and impact of depeering at Internet Exchange Points.",
+    "status": "active",
+    "period": {
+      "start": "2026-01",
+      "end": null
+    },
+    "lead": "pedro-marcos",
+    "people": [
+      "pedro-marcos"
+    ],
+    "institutions": {
+      "host": "furg",
+      "collaborators": [
+        "ixbr",
+        "qmul"
+      ]
+    },
+    "researchers": {
+      "collaborators": [
+        {
+          "name": "Robert Smith",
+          "institution": "qmul",
+          "url": "https://www.qmul.ac.uk/"
+        }
+      ]
+    },
+    "funding": {
+      "grants": [
+        "isoc-ixp-trends"
+      ]
+    },
+    "areas": [
+      "ixps",
+      "interconnection",
+      "routing"
+    ],
+    "repositories": [
+      "iLENS-FURG/ixp-depeering"
+    ],
+    "website": {
+      "featured": true,
+      "hero": "/images/projects/ixpert.svg"
+    },
+    "description": "Quantifying depeering trends and studying their implications for IXP relevance, routing structure, and Internet interconnection.",
+    "research_questions": [
+      "ixp-depeering-rq1",
+      "ixp-depeering-rq2"
+    ],
+    "outputs": {
+      "software": [],
+      "datasets": []
+    },
+    "announce": true,
+    "methods": [
+      "BGP longitudinal analysis",
+      "PeeringDB analysis",
+      "Graph analysis"
+    ],
+    "timeline": [
+      {
+        "date": "2026-01",
+        "label": "Measurement design"
+      },
+      {
+        "date": "2026-09",
+        "label": "Dataset construction"
+      },
+      {
+        "date": "2027-03",
+        "label": "Comparative analysis"
+      }
+    ],
+    "persistent_id": "ilens:project:ixp-depeering",
+    "research_role": {
+      "type": "lead",
+      "organization": "ilens"
+    }
+  },
+  {
+    "id": "ixpert",
+    "title": "IXPert",
+    "subtitle": "Measuring, understanding, and engineering the benefits of connecting to Internet Exchange Points.",
+    "status": "active",
+    "period": {
+      "start": "2025-01",
+      "end": null
+    },
+    "lead": "pedro-marcos",
+    "people": [
+      "pedro-marcos",
+      "joao-souza"
+    ],
+    "institutions": {
+      "host": "furg",
+      "collaborators": [
+        "ixbr",
+        "qmul"
+      ]
+    },
+    "researchers": {
+      "collaborators": [
+        {
+          "name": "Robert Smith",
+          "institution": "qmul",
+          "url": "https://www.qmul.ac.uk/"
+        }
+      ]
+    },
+    "funding": {
+      "grants": [
+        "cnpq-407302-2025-5"
+      ]
+    },
+    "areas": [
+      "internet-measurement",
+      "interconnection",
+      "ixps",
+      "routing"
+    ],
+    "repositories": [
+      "iLENS-FURG/ixpert"
+    ],
+    "website": {
+      "featured": true,
+      "hero": "/images/projects/ixpert.svg"
+    },
+    "description": "IXPert investigates the benefits of connecting to Internet Exchange Points through large-scale measurements and data analysis.",
+    "research_questions": [
+      "ixpert-rq1",
+      "ixpert-rq2"
+    ],
+    "outputs": {
+      "software": [
+        "ixpert"
+      ],
+      "datasets": [
+        "ixpert-measurements"
+      ]
+    },
+    "methods": [
+      "BGP measurement",
+      "Graph analysis",
+      "Active Internet measurement",
+      "Routing-path analysis"
+    ],
+    "timeline": [
+      {
+        "date": "2025-01",
+        "label": "Project started"
+      },
+      {
+        "date": "2026-06",
+        "label": "Measurement platform expansion"
+      },
+      {
+        "date": "2026-12",
+        "label": "Dataset release"
+      }
+    ],
+    "persistent_id": "ilens:project:ixpert",
+    "research_role": {
+      "type": "lead",
+      "organization": "ilens"
+    }
+  },
+  {
+    "id": "peering-lies",
+    "title": "PeeringLies",
+    "subtitle": "Measuring discrepancies between public peering information sources.",
+    "status": "active",
+    "period": {
+      "start": null,
+      "end": null
+    },
+    "lead": null,
+    "research_role": {
+      "type": "collaborator",
+      "organization": "ilens"
+    },
+    "people": [
+      "pedro-marcos"
+    ],
+    "institutions": {
+      "host": "furg",
+      "collaborators": []
+    },
+    "researchers": {
+      "collaborators": []
+    },
+    "funding": {
+      "grants": []
+    },
+    "areas": [
+      "interconnection",
+      "ixps",
+      "internet-measurement"
+    ],
+    "repositories": [
+      "iLENS-FURG/peering-lies"
+    ],
+    "website": {
+      "featured": false,
+      "hero": "/images/projects/ixpert.svg"
+    },
+    "description": "Studying inconsistencies between public sources of Internet peering information and their implications for measurement and research.",
+    "research_questions": [],
+    "outputs": {
+      "software": [],
+      "datasets": []
+    },
+    "methods": [
+      "Cross-source comparison",
+      "PeeringDB analysis"
+    ],
+    "timeline": [],
+    "persistent_id": "ilens:project:peering-lies"
+  },
+  {
+    "id": "routing-security",
+    "title": "Routing Security",
+    "subtitle": "Measuring and engineering safer Internet routing.",
+    "status": "active",
+    "period": {
+      "start": "2025-01",
+      "end": null
+    },
+    "lead": "pedro-marcos",
+    "people": [
+      "pedro-marcos",
+      "ana-silva"
+    ],
+    "institutions": {
+      "host": "furg",
+      "collaborators": [
+        "qmul"
+      ]
+    },
+    "researchers": {
+      "collaborators": []
+    },
+    "funding": {
+      "grants": [
+        "cnpq-407302-2025-5"
+      ]
+    },
+    "areas": [
+      "routing-security",
+      "bgp",
+      "rpki"
+    ],
+    "repositories": [
+      "iLENS-FURG/routing-security"
+    ],
+    "website": {
+      "featured": true,
+      "hero": "/images/projects/routing-security.svg"
+    },
+    "description": "Research on BGP security, RPKI, ASPA, hijacks, route leaks, and operational mechanisms for improving routing resilience.",
+    "research_questions": [
+      "routing-security-rq1",
+      "routing-security-rq2"
+    ],
+    "methods": [
+      "BGP telemetry",
+      "RPKI/ROA analysis",
+      "ASPA verification",
+      "Security event analysis"
+    ],
+    "timeline": [
+      {
+        "date": "2026-01",
+        "label": "Security measurement framework"
+      },
+      {
+        "date": "2026-10",
+        "label": "Operational measurements"
+      },
+      {
+        "date": "2027-06",
+        "label": "Results and tooling"
+      }
+    ],
+    "persistent_id": "ilens:project:routing-security",
+    "research_role": {
+      "type": "lead",
+      "organization": "ilens"
+    }
+  }
+]

@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: iLENS Research API
+  version: 0.12.0
+  description: Read-only static API generated from the iLENS research knowledge base.
+servers:
+  - url: https://ilens.furg.br/api
+paths:
+  /projects.json:
+    get:
+      summary: Projects
+      responses: {"200": {description: OK}}
+  /publications.json:
+    get:
+      summary: Publications
+      responses: {"200": {description: OK}}
+  /datasets.json:
+    get:
+      summary: Datasets
+      responses: {"200": {description: OK}}
+  /experiments.json:
+    get:
+      summary: Experiments
+      responses: {"200": {description: OK}}
+  /observatories.json:
+    get:
+      summary: Observatories
+      responses: {"200": {description: OK}}
+  /research-graph.json:
+    get:
+      summary: Research knowledge graph
+      responses: {"200": {description: OK}}

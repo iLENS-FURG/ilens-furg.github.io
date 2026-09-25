@@ -1,0 +1,43 @@
+{
+  "version": "v12.2",
+  "counts": {
+    "people": 3,
+    "projects": 5,
+    "publications": 0,
+    "datasets": 1,
+    "software": 1,
+    "experiments": 1,
+    "research-questions": 6,
+    "claims": 1,
+    "evidence": 1,
+    "observatories": 4
+  },
+  "observatories": [
+    [
+      "Internet Interconnection Observatory",
+      "planned",
+      "weekly"
+    ],
+    [
+      "IXP Depeering Observatory",
+      "planned",
+      "weekly"
+    ],
+    [
+      "Routing Stability Observatory",
+      "planned",
+      "daily"
+    ],
+    [
+      "RPKI Observatory",
+      "planned",
+      "daily"
+    ]
+  ],
+  "claims": [
+    [
+      "claim-ixp-depeering-001",
+      "candidate"
+    ]
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "version": "v12",
+  "count": 1,
+  "data": [
+    {
+      "id": "ixp-depeering-baseline",
+      "persistent_id": "ilens:experiment:ixp-depeering-baseline",
+      "title": "IXP Depeering Baseline Measurement",
+      "status": "planned",
+      "version": "1.0.0",
+      "project": "ixp-depeering",
+      "research_questions": [
+        "ixp-depeering-rq1",
+        "ixp-depeering-rq2"
+      ],
+      "methods": [
+        "bgp-longitudinal-analysis"
+      ],
+      "datasets": [
+        "ixpert-measurements"
+      ],
+      "software": [
+        "ixpert"
+      ],
+      "repository": "iLENS-FURG/ixp-depeering",
+      "parameters": {
+        "observation_window": "2018-2026",
+        "unit_of_analysis": "IXP-AS relationship"
+      },
+      "provenance": {
+        "source_type": "iLENS-curated",
+        "source_repository": "iLENS-FURG/ilens-data",
+        "source_path": "experiments/ixp-depeering-baseline.yml",
+        "retrieved_at": "2026-09-24",
+        "processing_version": "v9"
+      },
+      "execution": {
+        "workflow": ".github/workflows/reproduce-experiment.yml",
+        "status": "not-run",
+        "commit": null,
+        "environment": "docker://ghcr.io/ilens-furg/ixp-depeering:1.0.0",
+        "reproducibility": "deterministic"
+      },
+      "results": [],
+      "outputs": {
+        "figures": [],
+        "tables": [],
+        "artifacts": []
+      }
+    }
+  ]
+}

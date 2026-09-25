@@ -1,0 +1,21 @@
+<section class="page-head"><div class="container"><div class="eyebrow blue">iLENS</div><h1>Research</h1><p>We investigate how the Internet is built, connected, operated, and secured through measurement, data analysis, experiments, and collaboration.</p></div></section>
+<section class="section"><div class="container">
+  <div class="area-grid">
+    {{ range $idx, $x := slice "Architecture|How Internet infrastructure is structured and evolves.|internet-architecture" "Routing|BGP, traffic engineering, stability, and resilience.|routing" "Security|RPKI, ASPA, hijacking, filtering, and DDoS.|routing-security" "Interconnection|IXPs, peering, transit, and connectivity ecosystems.|interconnection" "Operations|How networks are operated, measured, and engineered.|network-operations" "Governance|Technical decisions, transparency, and Internet coordination.|internet-governance" }}
+      {{ $p := split $x "|" }}
+      <a class="area-card" href="#{{ index $p 2 }}" id="{{ index $p 2 }}"><div class="eyebrow blue">{{ printf "%02d" (add $idx 1) }}</div><h2>{{ index $p 0 }}</h2><p>{{ index $p 1 }}</p><span>Explore related projects →</span></a>
+    {{ end }}
+  </div>
+
+  <div class="research-overview-grid">
+    <div class="notice"><strong>How we work.</strong> We combine Internet measurements, longitudinal data analysis, experiments, and operational knowledge to produce research that can be inspected and reused.</div>
+    <div class="notice"><strong>What connects the areas.</strong> Many iLENS projects cross several lenses—for example, studying routing behavior at Internet Exchange Points or evaluating security mechanisms using operational routing data.</div>
+  </div>
+
+  <h2 class="research-section-title">Featured research</h2>
+  <div class="relation-grid">
+    {{ range first 6 site.Data.generated.projects }}
+      <a class="relation-card" href="{{ printf "/projects/%s/" .id | relURL }}"><span class="output-kicker">PROJECT</span><h3>{{ .title }}</h3><p>{{ .subtitle }}</p><span class="learn">Explore project →</span></a>
+    {{ end }}
+  </div>
+</div></section>

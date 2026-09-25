@@ -1,0 +1,10 @@
+[
+  {
+    "id": "example-award",
+    "title": "Example Research Award",
+    "person": "pedro-marcos",
+    "institution": "furg",
+    "year": 2026,
+    "status": "example"
+  }
+]

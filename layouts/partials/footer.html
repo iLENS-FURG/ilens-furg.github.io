@@ -1,0 +1,13 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="{{ "images/logo-horizontal.svg" | relURL }}" alt="iLENS">
+      <p>Measuring, Understanding, and Engineering the Internet.<br>{{ site.Params.affiliation }}<br>{{ site.Params.location }}</p>
+      <div class="footer-meta"><span>Internet through a Lens</span><span>·</span><a href="{{ site.Params.github }}" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+    <div class="footer-links">
+      <a href="{{ "/research/" | relURL }}">Research</a><a href="{{ "/projects/" | relURL }}">Projects</a><a href="{{ "/people/" | relURL }}">People</a><a href="{{ "/publications/" | relURL }}">Publications</a><a href="{{ "/data-software/" | relURL }}">Data & Software</a><a href="{{ "/about/" | relURL }}">About</a><a href="{{ "/join-us/" | relURL }}">Join Us</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">© {{ now.Year }} iLENS · SYSTEMS Research Group · FURG · Rio Grande, Brazil</div>
+</footer>

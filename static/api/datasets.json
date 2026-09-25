@@ -1,0 +1,24 @@
+{
+  "version": "v12",
+  "count": 1,
+  "data": [
+    {
+      "id": "ixpert-measurements",
+      "title": "IXPert Measurement Dataset",
+      "status": "active",
+      "description": "Measurements supporting the IXPert project.",
+      "project": "ixpert",
+      "maintainers": [
+        "pedro-marcos"
+      ],
+      "repository": "iLENS-FURG/ixpert-data",
+      "license": "CC-BY-4.0",
+      "access": "public",
+      "links": {
+        "repository": "https://github.com/iLENS-FURG/ixpert-data",
+        "doi": null
+      },
+      "persistent_id": "ilens:dataset:ixpert-measurements"
+    }
+  ]
+}

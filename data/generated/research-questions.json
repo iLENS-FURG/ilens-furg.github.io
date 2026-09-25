@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ixp-depeering-rq1",
+    "project": "ixp-depeering",
+    "text": "How frequently do major networks depeer from IXPs?",
+    "areas": [
+      "ixps",
+      "interconnection",
+      "routing"
+    ],
+    "persistent_id": "ilens:rq:ixp-depeering-rq1",
+    "methods": [],
+    "hypothesis": null
+  },
+  {
+    "id": "ixp-depeering-rq2",
+    "project": "ixp-depeering",
+    "text": "What structural effects follow depeering events?",
+    "areas": [
+      "ixps",
+      "interconnection",
+      "routing"
+    ],
+    "persistent_id": "ilens:rq:ixp-depeering-rq2",
+    "methods": [],
+    "hypothesis": null
+  },
+  {
+    "id": "ixpert-rq1",
+    "project": "ixpert",
+    "text": "What network-level benefits can an ISP obtain by connecting to an IXP?",
+    "areas": [
+      "internet-measurement",
+      "interconnection",
+      "ixps",
+      "routing"
+    ],
+    "persistent_id": "ilens:rq:ixpert-rq1",
+    "methods": [],
+    "hypothesis": null
+  },
+  {
+    "id": "ixpert-rq2",
+    "project": "ixpert",
+    "text": "How can those benefits be measured without access to private traffic statistics?",
+    "areas": [
+      "internet-measurement",
+      "interconnection",
+      "ixps",
+      "routing"
+    ],
+    "persistent_id": "ilens:rq:ixpert-rq2",
+    "methods": [],
+    "hypothesis": null
+  },
+  {
+    "id": "routing-security-rq1",
+    "project": "routing-security",
+    "text": "How do routing-security mechanisms change observable Internet routing behavior?",
+    "areas": [
+      "routing-security",
+      "bgp",
+      "rpki"
+    ],
+    "persistent_id": "ilens:rq:routing-security-rq1",
+    "methods": [],
+    "hypothesis": null
+  },
+  {
+    "id": "routing-security-rq2",
+    "project": "routing-security",
+    "text": "Where do operational gaps remain in routing-security deployment?",
+    "areas": [
+      "routing-security",
+      "bgp",
+      "rpki"
+    ],
+    "persistent_id": "ilens:rq:routing-security-rq2",
+    "methods": [],
+    "hypothesis": null
+  }
+]

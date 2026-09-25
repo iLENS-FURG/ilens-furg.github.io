@@ -1,0 +1,9 @@
+[
+  {
+    "id": "bgp-longitudinal-analysis",
+    "persistent_id": "ilens:method:bgp-longitudinal-analysis",
+    "title": "BGP longitudinal analysis",
+    "category": "passive-measurement",
+    "description": "Longitudinal analysis of routing observations to identify changes, events, and structural effects."
+  }
+]

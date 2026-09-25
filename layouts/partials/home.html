@@ -1,0 +1,113 @@
+{{ $projects := site.Data.generated.projects | default (slice) }}
+{{ $people := site.Data.generated.people | default (slice) }}
+{{ $pubs := site.Data.generated.publications | default (slice) }}
+{{ $datasets := site.Data.generated.datasets | default (slice) }}
+{{ $software := site.Data.generated.software | default (slice) }}
+{{ $activePeople := where $people "status" "active" }}
+{{ $featured := where $projects "website.featured" true }}
+
+<section class="hero hero-v11">
+  <div class="hero-orbit" aria-hidden="true">
+    <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+    <div class="lens-core"><span></span></div>
+    <div class="network-lines"></div>
+    {{ range seq 1 14 }}<i class="node node-{{ . }}"></i>{{ end }}
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">iLENS · FURG</div>
+      <div class="hero-mark">Internet through a <em>Lens</em></div>
+      <h1>Measuring, Understanding,<br><span>and Engineering the Internet.</span></h1>
+      <p class="hero-sub">iLENS is a research initiative within the SYSTEMS Research Group at FURG. We study how the Internet operates and evolves through measurement, data analysis, experiments, and collaboration.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="{{ "/research/" | relURL }}">Explore our research <span>→</span></a>
+        <a class="btn ghost" href="{{ "/projects/" | relURL }}">View projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stat-band stat-band-v11">
+  <div class="container stat-band-grid">
+    <div><strong>{{ len $projects }}</strong><span>research projects</span></div>
+    <div><strong>{{ len $activePeople }}</strong><span>active members</span></div>
+    <div><strong>{{ len $pubs }}</strong><span>publications</span></div>
+    <div><strong>{{ len $datasets }}</strong><span>datasets</span></div>
+    <div><strong>{{ len $software }}</strong><span>software projects</span></div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container">
+    <div class="section-head section-head-v11">
+      <div><div class="eyebrow blue">What we study</div><h2>Research on how the Internet works.</h2><p>We investigate Internet infrastructure using measurements, data analysis, experiments, and operational knowledge.</p></div>
+      <a class="text-link" href="{{ "/research/" | relURL }}">Explore research →</a>
+    </div>
+    <div class="lens-grid lens-grid-v11">
+      {{ range $idx, $x := slice "Architecture|How Internet infrastructure is structured and evolves.|internet-architecture" "Routing|BGP, traffic engineering, stability, and resilience.|routing" "Security|RPKI, ASPA, hijacking, filtering, and DDoS.|routing-security" "Interconnection|IXPs, peering, transit, and connectivity ecosystems.|interconnection" "Operations|How networks are operated, measured, and engineered.|network-operations" "Governance|Technical decisions, transparency, and Internet coordination.|internet-governance" }}
+      {{ $p := split $x "|" }}
+      <a class="lens-card lens-card-v11" href="{{ printf "/research/#%s" (index $p 2) | relURL }}"><span>{{ printf "%02d" (add $idx 1) }}</span><div><h3>{{ index $p 0 }}</h3><p>{{ index $p 1 }}</p></div><b>↗</b></a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section projects-v11">
+  <div class="container">
+    <div class="section-head section-head-v11">
+      <div><div class="eyebrow blue">Projects</div><h2>Research we lead and research we do with others.</h2><p>Our projects bring together measurement, analysis, experiments, and collaboration with the Internet community.</p></div>
+      <a class="text-link" href="{{ "/projects/" | relURL }}">All projects →</a>
+    </div>
+    <div class="featured-project-grid">
+      <div class="featured-project-main-wrap">
+        {{ range first 1 $featured }}
+        <a class="featured-project-main" href="{{ printf "/projects/%s/" .id | relURL }}">
+          <div class="featured-project-visual" style="background-image:url('{{ .website.hero | relURL }}')"><span>{{ if eq .research_role.type "lead" }}iLENS-led{{ else }}Collaborative{{ end }}</span></div>
+          <div class="featured-project-copy"><div class="chips"><span>{{ if eq .research_role.type "lead" }}iLENS-led{{ else }}Collaborative{{ end }}</span>{{ range first 2 .areas }}<span>{{ replace . "-" " " }}</span>{{ end }}</div><h3>{{ .title }}</h3><p>{{ .subtitle }}</p><span class="learn">Explore project →</span></div>
+        </a>
+        {{ end }}
+      </div>
+      <div class="featured-project-side">
+        {{ range first 2 (after 1 $featured) }}
+        <a class="project-side-card" href="{{ printf "/projects/%s/" .id | relURL }}"><div><span class="side-kicker">{{ if eq .research_role.type "lead" }}iLENS-led{{ else }}Collaborative{{ end }}</span><h3>{{ .title }}</h3><p>{{ .subtitle }}</p></div><b>↗</b></a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section light-section">
+  <div class="container split-grid split-grid-v11">
+    <div>
+      <div class="section-head section-head-v11 compact"><div><div class="eyebrow blue">Publications</div><h2>Recent research.</h2></div><a class="text-link" href="{{ "/publications/" | relURL }}">All publications →</a></div>
+      {{ range first 5 (sort $pubs "year" "desc") }}<a class="publication-row publication-row-v11" href="{{ printf "/publications/%s/" .id | relURL }}"><span class="pub-year">{{ .year }}</span><span><strong>{{ .title }}</strong><small>{{ .venue }}</small></span><b>↗</b></a>{{ end }}
+    </div>
+    <div>
+      <div class="section-head section-head-v11 compact"><div><div class="eyebrow blue">People</div><h2>The researchers behind iLENS.</h2></div><a class="text-link" href="{{ "/people/" | relURL }}">Meet the team →</a></div>
+      <div class="mini-people">
+        {{ range first 4 $activePeople }}<a href="{{ printf "/people/%s/" .id | relURL }}"><img src="{{ .photo | relURL }}" alt="{{ .name.display }}"><span><strong>{{ .name.display }}</strong><small>{{ .title }}</small></span></a>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-v11">
+      <div><div class="eyebrow blue">Research outputs</div><h2>Data and software we share.</h2><p>Reusable research artifacts connected to our projects and publications.</p></div>
+      <a class="text-link" href="{{ "/data-software/" | relURL }}">Explore outputs →</a>
+    </div>
+    <div class="output-home-grid">
+      {{ range first 1 $datasets }}<a class="relation-card" href="{{ "/data-software/#datasets" | relURL }}"><span class="output-kicker">DATASET</span><h3>{{ .title }}</h3><p>{{ .description }}</p><span class="learn">View datasets →</span></a>{{ end }}
+      {{ range first 1 $software }}<a class="relation-card" href="{{ "/data-software/#software" | relURL }}"><span class="output-kicker">SOFTWARE</span><h3>{{ .title }}</h3><p>{{ .description }}</p><span class="learn">View software →</span></a>{{ end }}
+      <a class="relation-card" href="{{ "/about/" | relURL }}"><span class="output-kicker">ABOUT iLENS</span><h3>Research with the Internet community.</h3><p>Learn about our group, affiliation, collaborators, and how we work.</p><span class="learn">About iLENS →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section cta-section-v11">
+  <div class="container cta-box cta-box-v11">
+    <div><div class="eyebrow">iLENS · Internet through a Lens</div><h2>Interested in working with us?</h2><p>Find opportunities for students, visiting researchers, and research collaborations.</p></div>
+    <div class="cta-actions"><a class="btn primary" href="{{ "/join-us/" | relURL }}">Join iLENS →</a><a class="btn ghost dark-ghost" href="{{ "/about/" | relURL }}">About the group</a></div>
+  </div>
+</section>

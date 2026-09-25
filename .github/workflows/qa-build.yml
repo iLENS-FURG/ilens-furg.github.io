@@ -1,0 +1,34 @@
+name: iLENS website QA
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout private data repository
+        uses: actions/checkout@v4
+        with:
+          repository: iLENS-FURG/ilens-data
+          path: _data
+          token: ${{ secrets.ILENS_DATA_TOKEN }}
+      - name: Checkout private automation repository
+        uses: actions/checkout@v4
+        with:
+          repository: iLENS-FURG/ilens-automation
+          path: _automation
+          token: ${{ secrets.ILENS_AUTOMATION_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r _automation/requirements.txt
+      - run: python _automation/scripts/generate_content.py _data .
+      - run: python _automation/scripts/qa.py _data
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.151.0'
+          extended: true
+      - run: hugo --minify

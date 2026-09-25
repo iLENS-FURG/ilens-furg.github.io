@@ -1,0 +1,54 @@
+{
+  "version": "v12",
+  "count": 2,
+  "data": [
+    {
+      "id": "cnpq-407302-2025-5",
+      "title": "iLENS Internet Research Project",
+      "funder": "cnpq",
+      "grant_number": "407302/2025-5",
+      "program": "Research funding",
+      "period": {
+        "start": "2026-01",
+        "end": "2029-12"
+      },
+      "principal_investigator": "pedro-marcos",
+      "institution": "furg",
+      "projects": [
+        "routing-security",
+        "ixpert"
+      ],
+      "status": "active",
+      "links": {
+        "official": "https://www.gov.br/cnpq"
+      },
+      "persistent_id": "ilens:grant:cnpq-407302-2025-5"
+    },
+    {
+      "id": "isoc-ixp-trends",
+      "title": "IXP Trends and Internet Interconnection",
+      "grant_number": null,
+      "funder": "isoc",
+      "program": "Internet Society Foundation",
+      "period": {
+        "start": "2026-01",
+        "end": "2027-12"
+      },
+      "principal_investigator": "pedro-marcos",
+      "institution": "furg",
+      "projects": [
+        "ixp-depeering"
+      ],
+      "status": "active",
+      "amount": {
+        "value": null,
+        "currency": "USD"
+      },
+      "links": {
+        "official": "https://www.isocfoundation.org/"
+      },
+      "announce": true,
+      "persistent_id": "ilens:grant:isoc-ixp-trends"
+    }
+  ]
+}

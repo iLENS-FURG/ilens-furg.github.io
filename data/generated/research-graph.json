@@ -1,0 +1,912 @@
+{
+  "version": "v12",
+  "nodes": [
+    {
+      "id": "ilens:person:ana-silva",
+      "type": "person",
+      "label": "Ana Silva",
+      "entity_id": "ana-silva",
+      "research_role": null,
+      "url": "/people/ana-silva/"
+    },
+    {
+      "id": "ilens:person:joao-souza",
+      "type": "person",
+      "label": "João Souza",
+      "entity_id": "joao-souza",
+      "research_role": null,
+      "url": "/people/joao-souza/"
+    },
+    {
+      "id": "ilens:person:pedro-marcos",
+      "type": "person",
+      "label": "Pedro Marcos",
+      "entity_id": "pedro-marcos",
+      "research_role": null,
+      "url": "/people/pedro-marcos/"
+    },
+    {
+      "id": "ilens:institution:cnpq",
+      "type": "institution",
+      "label": "CNPq",
+      "entity_id": "cnpq",
+      "research_role": null,
+      "url": "/institutions/cnpq/"
+    },
+    {
+      "id": "ilens:institution:furg",
+      "type": "institution",
+      "label": "FURG",
+      "entity_id": "furg",
+      "research_role": null,
+      "url": "/institutions/furg/"
+    },
+    {
+      "id": "ilens:institution:isoc",
+      "type": "institution",
+      "label": "Internet Society",
+      "entity_id": "isoc",
+      "research_role": null,
+      "url": "/institutions/isoc/"
+    },
+    {
+      "id": "ilens:institution:ixbr",
+      "type": "institution",
+      "label": "IX.br",
+      "entity_id": "ixbr",
+      "research_role": null,
+      "url": "/institutions/ixbr/"
+    },
+    {
+      "id": "ilens:institution:lacnic",
+      "type": "institution",
+      "label": "LACNIC",
+      "entity_id": "lacnic",
+      "research_role": null,
+      "url": "/institutions/lacnic/"
+    },
+    {
+      "id": "ilens:institution:qmul",
+      "type": "institution",
+      "label": "QMUL",
+      "entity_id": "qmul",
+      "research_role": null,
+      "url": "/institutions/qmul/"
+    },
+    {
+      "id": "ilens:institution:ufrgs",
+      "type": "institution",
+      "label": "UFRGS",
+      "entity_id": "ufrgs",
+      "research_role": null,
+      "url": "/institutions/ufrgs/"
+    },
+    {
+      "id": "ilens:project:aspa",
+      "type": "project",
+      "label": "ASPA",
+      "entity_id": "aspa",
+      "research_role": {
+        "type": "collaborator",
+        "organization": "ilens"
+      },
+      "url": "/projects/aspa/"
+    },
+    {
+      "id": "ilens:project:ixp-depeering",
+      "type": "project",
+      "label": "IXP Depeering",
+      "entity_id": "ixp-depeering",
+      "research_role": {
+        "type": "lead",
+        "organization": "ilens"
+      },
+      "url": "/projects/ixp-depeering/"
+    },
+    {
+      "id": "ilens:project:ixpert",
+      "type": "project",
+      "label": "IXPert",
+      "entity_id": "ixpert",
+      "research_role": {
+        "type": "lead",
+        "organization": "ilens"
+      },
+      "url": "/projects/ixpert/"
+    },
+    {
+      "id": "ilens:project:peering-lies",
+      "type": "project",
+      "label": "PeeringLies",
+      "entity_id": "peering-lies",
+      "research_role": {
+        "type": "collaborator",
+        "organization": "ilens"
+      },
+      "url": "/projects/peering-lies/"
+    },
+    {
+      "id": "ilens:project:routing-security",
+      "type": "project",
+      "label": "Routing Security",
+      "entity_id": "routing-security",
+      "research_role": {
+        "type": "lead",
+        "organization": "ilens"
+      },
+      "url": "/projects/routing-security/"
+    },
+    {
+      "id": "ilens:rq:ixp-depeering-rq1",
+      "type": "research-question",
+      "label": "How frequently do major networks depeer from IXPs?",
+      "entity_id": "ixp-depeering-rq1",
+      "research_role": null,
+      "url": "/research-questions/ixp-depeering-rq1/"
+    },
+    {
+      "id": "ilens:rq:ixp-depeering-rq2",
+      "type": "research-question",
+      "label": "What structural effects follow depeering events?",
+      "entity_id": "ixp-depeering-rq2",
+      "research_role": null,
+      "url": "/research-questions/ixp-depeering-rq2/"
+    },
+    {
+      "id": "ilens:rq:ixpert-rq1",
+      "type": "research-question",
+      "label": "What network-level benefits can an ISP obtain by connecting to an IXP?",
+      "entity_id": "ixpert-rq1",
+      "research_role": null,
+      "url": "/research-questions/ixpert-rq1/"
+    },
+    {
+      "id": "ilens:rq:ixpert-rq2",
+      "type": "research-question",
+      "label": "How can those benefits be measured without access to private traffic statistics?",
+      "entity_id": "ixpert-rq2",
+      "research_role": null,
+      "url": "/research-questions/ixpert-rq2/"
+    },
+    {
+      "id": "ilens:rq:routing-security-rq1",
+      "type": "research-question",
+      "label": "How do routing-security mechanisms change observable Internet routing behavior?",
+      "entity_id": "routing-security-rq1",
+      "research_role": null,
+      "url": "/research-questions/routing-security-rq1/"
+    },
+    {
+      "id": "ilens:rq:routing-security-rq2",
+      "type": "research-question",
+      "label": "Where do operational gaps remain in routing-security deployment?",
+      "entity_id": "routing-security-rq2",
+      "research_role": null,
+      "url": "/research-questions/routing-security-rq2/"
+    },
+    {
+      "id": "ilens:dataset:ixpert-measurements",
+      "type": "dataset",
+      "label": "IXPert Measurement Dataset",
+      "entity_id": "ixpert-measurements",
+      "research_role": null,
+      "url": "/datasets/ixpert-measurements/"
+    },
+    {
+      "id": "ilens:software:ixpert",
+      "type": "software",
+      "label": "IXPert",
+      "entity_id": "ixpert",
+      "research_role": null,
+      "url": "/software/ixpert/"
+    },
+    {
+      "id": "ilens:grant:cnpq-407302-2025-5",
+      "type": "grant",
+      "label": "iLENS Internet Research Project",
+      "entity_id": "cnpq-407302-2025-5",
+      "research_role": null,
+      "url": "/grants/cnpq-407302-2025-5/"
+    },
+    {
+      "id": "ilens:grant:isoc-ixp-trends",
+      "type": "grant",
+      "label": "IXP Trends and Internet Interconnection",
+      "entity_id": "isoc-ixp-trends",
+      "research_role": null,
+      "url": "/grants/isoc-ixp-trends/"
+    },
+    {
+      "id": "ilens:experiment:ixp-depeering-baseline",
+      "type": "experiment",
+      "label": "IXP Depeering Baseline Measurement",
+      "entity_id": "ixp-depeering-baseline",
+      "research_role": null,
+      "url": "/experiments/ixp-depeering-baseline/"
+    },
+    {
+      "id": "ilens:method:bgp-longitudinal-analysis",
+      "type": "method",
+      "label": "BGP longitudinal analysis",
+      "entity_id": "bgp-longitudinal-analysis",
+      "research_role": null,
+      "url": "#bgp-longitudinal-analysis"
+    },
+    {
+      "id": "ilens:claim:ixp-depeering-001",
+      "type": "claim",
+      "label": "Depeering can change the interconnection structure observed at an IXP.",
+      "entity_id": "claim-ixp-depeering-001",
+      "research_role": null,
+      "url": "#claim-ixp-depeering-001"
+    },
+    {
+      "id": "ilens:evidence:baseline-001",
+      "type": "evidence",
+      "label": "IXP depeering baseline result",
+      "entity_id": "baseline-001",
+      "research_role": null,
+      "url": "#baseline-001"
+    },
+    {
+      "id": "ilens:observatory:interconnection-observatory",
+      "type": "observatory",
+      "label": "Internet Interconnection Observatory",
+      "entity_id": "interconnection-observatory",
+      "research_role": null,
+      "url": "/observatories/interconnection-observatory/"
+    },
+    {
+      "id": "ilens:observatory:ixp-depeering-observatory",
+      "type": "observatory",
+      "label": "IXP Depeering Observatory",
+      "entity_id": "ixp-depeering-observatory",
+      "research_role": null,
+      "url": "/observatories/ixp-depeering-observatory/"
+    },
+    {
+      "id": "ilens:observatory:routing-stability-observatory",
+      "type": "observatory",
+      "label": "Routing Stability Observatory",
+      "entity_id": "routing-stability-observatory",
+      "research_role": null,
+      "url": "/observatories/routing-stability-observatory/"
+    },
+    {
+      "id": "ilens:observatory:rpki-observatory",
+      "type": "observatory",
+      "label": "RPKI Observatory",
+      "entity_id": "rpki-observatory",
+      "research_role": null,
+      "url": "/observatories/rpki-observatory/"
+    },
+    {
+      "id": "ilens:area:internet-architecture",
+      "type": "area",
+      "label": "Internet Architecture",
+      "entity_id": "internet-architecture"
+    },
+    {
+      "id": "ilens:area:interconnection",
+      "type": "area",
+      "label": "Interconnection",
+      "entity_id": "interconnection"
+    },
+    {
+      "id": "ilens:area:ixps",
+      "type": "area",
+      "label": "Internet Exchange Points",
+      "entity_id": "ixps"
+    },
+    {
+      "id": "ilens:area:routing",
+      "type": "area",
+      "label": "Routing",
+      "entity_id": "routing"
+    },
+    {
+      "id": "ilens:area:routing-security",
+      "type": "area",
+      "label": "Routing Security",
+      "entity_id": "routing-security"
+    },
+    {
+      "id": "ilens:area:network-operations",
+      "type": "area",
+      "label": "Network Operations",
+      "entity_id": "network-operations"
+    },
+    {
+      "id": "ilens:area:internet-measurement",
+      "type": "area",
+      "label": "Internet Measurement",
+      "entity_id": "internet-measurement"
+    },
+    {
+      "id": "ilens:area:internet-governance",
+      "type": "area",
+      "label": "Internet Governance",
+      "entity_id": "internet-governance"
+    },
+    {
+      "id": "ilens:area:bgp",
+      "type": "area",
+      "label": "BGP",
+      "entity_id": "bgp"
+    },
+    {
+      "id": "ilens:area:rpki",
+      "type": "area",
+      "label": "RPKI",
+      "entity_id": "rpki"
+    }
+  ],
+  "edges": [
+    {
+      "source": "ilens:project:aspa",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:aspa",
+      "target": "ilens:area:routing-security",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:aspa",
+      "target": "ilens:area:bgp",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:aspa",
+      "target": "ilens:area:rpki",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:aspa",
+      "target": "ilens:institution:furg",
+      "relation": "hosted_by"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:rq:ixp-depeering-rq1",
+      "relation": "asks"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:rq:ixp-depeering-rq2",
+      "relation": "asks"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:grant:isoc-ixp-trends",
+      "relation": "funded_by"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:institution:ixbr",
+      "relation": "collaborates_with"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:institution:qmul",
+      "relation": "collaborates_with"
+    },
+    {
+      "source": "ilens:project:ixp-depeering",
+      "target": "ilens:institution:furg",
+      "relation": "hosted_by"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:person:joao-souza",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:rq:ixpert-rq1",
+      "relation": "asks"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:rq:ixpert-rq2",
+      "relation": "asks"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:area:internet-measurement",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:dataset:ixpert-measurements",
+      "relation": "produces"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:software:ixpert",
+      "relation": "produces"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:grant:cnpq-407302-2025-5",
+      "relation": "funded_by"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:institution:ixbr",
+      "relation": "collaborates_with"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:institution:qmul",
+      "relation": "collaborates_with"
+    },
+    {
+      "source": "ilens:project:ixpert",
+      "target": "ilens:institution:furg",
+      "relation": "hosted_by"
+    },
+    {
+      "source": "ilens:project:peering-lies",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:peering-lies",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:peering-lies",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:peering-lies",
+      "target": "ilens:area:internet-measurement",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:peering-lies",
+      "target": "ilens:institution:furg",
+      "relation": "hosted_by"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:person:ana-silva",
+      "relation": "member"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:rq:routing-security-rq1",
+      "relation": "asks"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:rq:routing-security-rq2",
+      "relation": "asks"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:area:routing-security",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:area:bgp",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:area:rpki",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:grant:cnpq-407302-2025-5",
+      "relation": "funded_by"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:institution:qmul",
+      "relation": "collaborates_with"
+    },
+    {
+      "source": "ilens:project:routing-security",
+      "target": "ilens:institution:furg",
+      "relation": "hosted_by"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq1",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "belongs_to"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq1",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq1",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq1",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq2",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "belongs_to"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq2",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq2",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixp-depeering-rq2",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq1",
+      "target": "ilens:project:ixpert",
+      "relation": "belongs_to"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq1",
+      "target": "ilens:area:internet-measurement",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq1",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq1",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq1",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq2",
+      "target": "ilens:project:ixpert",
+      "relation": "belongs_to"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq2",
+      "target": "ilens:area:internet-measurement",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq2",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq2",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:ixpert-rq2",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq1",
+      "target": "ilens:project:routing-security",
+      "relation": "belongs_to"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq1",
+      "target": "ilens:area:routing-security",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq1",
+      "target": "ilens:area:bgp",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq1",
+      "target": "ilens:area:rpki",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq2",
+      "target": "ilens:project:routing-security",
+      "relation": "belongs_to"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq2",
+      "target": "ilens:area:routing-security",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq2",
+      "target": "ilens:area:bgp",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:rq:routing-security-rq2",
+      "target": "ilens:area:rpki",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:experiment:ixp-depeering-baseline",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "part_of"
+    },
+    {
+      "source": "ilens:experiment:ixp-depeering-baseline",
+      "target": "ilens:rq:ixp-depeering-rq1",
+      "relation": "tests"
+    },
+    {
+      "source": "ilens:experiment:ixp-depeering-baseline",
+      "target": "ilens:rq:ixp-depeering-rq2",
+      "relation": "tests"
+    },
+    {
+      "source": "ilens:experiment:ixp-depeering-baseline",
+      "target": "ilens:method:bgp-longitudinal-analysis",
+      "relation": "uses_method"
+    },
+    {
+      "source": "ilens:experiment:ixp-depeering-baseline",
+      "target": "ilens:dataset:ixpert-measurements",
+      "relation": "uses_dataset"
+    },
+    {
+      "source": "ilens:experiment:ixp-depeering-baseline",
+      "target": "ilens:software:ixpert",
+      "relation": "uses_software"
+    },
+    {
+      "source": "ilens:dataset:ixpert-measurements",
+      "target": "ilens:project:ixpert",
+      "relation": "produced_by"
+    },
+    {
+      "source": "ilens:software:ixpert",
+      "target": "ilens:project:ixpert",
+      "relation": "produced_by"
+    },
+    {
+      "source": "ilens:grant:cnpq-407302-2025-5",
+      "target": "ilens:institution:cnpq",
+      "relation": "funded_by"
+    },
+    {
+      "source": "ilens:grant:cnpq-407302-2025-5",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "led_by"
+    },
+    {
+      "source": "ilens:grant:cnpq-407302-2025-5",
+      "target": "ilens:project:routing-security",
+      "relation": "funds"
+    },
+    {
+      "source": "ilens:grant:cnpq-407302-2025-5",
+      "target": "ilens:project:ixpert",
+      "relation": "funds"
+    },
+    {
+      "source": "ilens:grant:isoc-ixp-trends",
+      "target": "ilens:institution:isoc",
+      "relation": "funded_by"
+    },
+    {
+      "source": "ilens:grant:isoc-ixp-trends",
+      "target": "ilens:person:pedro-marcos",
+      "relation": "led_by"
+    },
+    {
+      "source": "ilens:grant:isoc-ixp-trends",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "funds"
+    },
+    {
+      "source": "ilens:claim:ixp-depeering-001",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "part_of"
+    },
+    {
+      "source": "ilens:claim:ixp-depeering-001",
+      "target": "ilens:rq:ixp-depeering-rq1",
+      "relation": "answers"
+    },
+    {
+      "source": "ilens:claim:ixp-depeering-001",
+      "target": "ilens:experiment:ixp-depeering-baseline",
+      "relation": "supported_by"
+    },
+    {
+      "source": "ilens:claim:ixp-depeering-001",
+      "target": "ilens:dataset:ixpert-measurements",
+      "relation": "supported_by"
+    },
+    {
+      "source": "ilens:evidence:baseline-001",
+      "target": "ilens:claim:ixp-depeering-001",
+      "relation": "supports"
+    },
+    {
+      "source": "ilens:evidence:baseline-001",
+      "target": "ilens:experiment:ixp-depeering-baseline",
+      "relation": "from_experiment"
+    },
+    {
+      "source": "ilens:evidence:baseline-001",
+      "target": "ilens:dataset:ixpert-measurements",
+      "relation": "uses_dataset"
+    },
+    {
+      "source": "ilens:observatory:interconnection-observatory",
+      "target": "ilens:project:ixpert",
+      "relation": "monitors_project"
+    },
+    {
+      "source": "ilens:observatory:interconnection-observatory",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "monitors_project"
+    },
+    {
+      "source": "ilens:observatory:interconnection-observatory",
+      "target": "ilens:rq:ixpert-rq1",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:interconnection-observatory",
+      "target": "ilens:rq:ixpert-rq2",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:interconnection-observatory",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:interconnection-observatory",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:ixp-depeering-observatory",
+      "target": "ilens:project:ixp-depeering",
+      "relation": "monitors_project"
+    },
+    {
+      "source": "ilens:observatory:ixp-depeering-observatory",
+      "target": "ilens:rq:ixp-depeering-rq1",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:ixp-depeering-observatory",
+      "target": "ilens:rq:ixp-depeering-rq2",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:ixp-depeering-observatory",
+      "target": "ilens:area:ixps",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:ixp-depeering-observatory",
+      "target": "ilens:area:interconnection",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:ixp-depeering-observatory",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:routing-stability-observatory",
+      "target": "ilens:project:routing-security",
+      "relation": "monitors_project"
+    },
+    {
+      "source": "ilens:observatory:routing-stability-observatory",
+      "target": "ilens:rq:routing-security-rq1",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:routing-stability-observatory",
+      "target": "ilens:area:routing",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:routing-stability-observatory",
+      "target": "ilens:area:measurement",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:rpki-observatory",
+      "target": "ilens:project:routing-security",
+      "relation": "monitors_project"
+    },
+    {
+      "source": "ilens:observatory:rpki-observatory",
+      "target": "ilens:rq:routing-security-rq1",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:rpki-observatory",
+      "target": "ilens:rq:routing-security-rq2",
+      "relation": "monitors_rq"
+    },
+    {
+      "source": "ilens:observatory:rpki-observatory",
+      "target": "ilens:area:routing-security",
+      "relation": "area"
+    },
+    {
+      "source": "ilens:observatory:rpki-observatory",
+      "target": "ilens:area:measurement",
+      "relation": "area"
+    }
+  ],
+  "generated_at": "2026-09-25T12:02:00.337813+00:00"
+}

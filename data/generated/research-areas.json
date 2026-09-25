@@ -1,0 +1,52 @@
+[
+  {
+    "id": "internet-architecture",
+    "title": "Internet Architecture",
+    "description": "How the Internet is structured and evolves."
+  },
+  {
+    "id": "interconnection",
+    "title": "Interconnection",
+    "description": "Peering, transit, IXPs, remote peering, and connectivity ecosystems."
+  },
+  {
+    "id": "ixps",
+    "title": "Internet Exchange Points",
+    "description": "Measurement and engineering of IXPs and route-server ecosystems."
+  },
+  {
+    "id": "routing",
+    "title": "Routing",
+    "description": "Internet routing behavior, performance, and resilience."
+  },
+  {
+    "id": "routing-security",
+    "title": "Routing Security",
+    "description": "RPKI, ASPA, hijacking, filtering, and routing security mechanisms."
+  },
+  {
+    "id": "network-operations",
+    "title": "Network Operations",
+    "description": "Operational practices, observability, and decision support."
+  },
+  {
+    "id": "internet-measurement",
+    "title": "Internet Measurement",
+    "description": "Large-scale measurement methods, datasets, and empirical Internet science."
+  },
+  {
+    "id": "internet-governance",
+    "title": "Internet Governance",
+    "description": "Technical governance, policy implementation, and operational transparency."
+  },
+  {
+    "id": "bgp",
+    "title": "BGP",
+    "description": "BGP behavior, communities, traffic engineering, and routing policy."
+  },
+  {
+    "id": "rpki",
+    "title": "RPKI",
+    "description": "Resource Public Key Infrastructure and routing authorization."
+  }
+]

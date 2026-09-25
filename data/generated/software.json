@@ -1,0 +1,19 @@
+[
+  {
+    "id": "ixpert",
+    "title": "IXPert",
+    "status": "active",
+    "description": "Research software for measuring and analyzing Internet Exchange Point benefits.",
+    "project": "ixpert",
+    "maintainers": [
+      "pedro-marcos"
+    ],
+    "repository": "iLENS-FURG/ixpert",
+    "license": "Apache-2.0",
+    "links": {
+      "repository": "https://github.com/iLENS-FURG/ixpert",
+      "doi": null
+    },
+    "persistent_id": "ilens:software:ixpert"
+  }
+]

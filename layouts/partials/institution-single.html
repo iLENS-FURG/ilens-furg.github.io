@@ -1,0 +1,16 @@
+{{ $i := index (where site.Data.generated.institutions "id" .) 0 }}
+{{ $projects := site.Data.generated.projects }}
+{{ $people := site.Data.generated.people }}
+{{ $grants := site.Data.generated.grants }}
+<section class="page-head"><div class="container institution-head">
+  {{ with $i.logo.light }}<img class="institution-large-logo" src="{{ . | relURL }}" alt="{{ $i.name.short }} logo">{{ end }}
+  <div><div class="eyebrow blue">Institution</div><h1>{{ $i.name.short }}</h1><p>{{ $i.name.official }}</p></div>
+</div></section>
+<section class="section"><div class="container detail-grid"><article>
+  <h2>Projects</h2><div class="pub-list">{{ range $projects }}{{ if or (eq .institutions.host $i.id) (in .institutions.collaborators $i.id) }}<a class="pub-card" href="{{ printf "/projects/%s/" .id | relURL }}"><span class="pub-icon">◈</span><div><div class="pub-meta">{{ .status }}</div><h3>{{ .title }}</h3><p>{{ .subtitle }}</p></div></a>{{ end }}{{ end }}</div>
+  <h2>Researchers</h2><div class="inline-links">{{ range $person := $people }}{{ range $aff := $person.affiliations }}{{ if eq $aff.institution $i.id }}<a href="{{ printf "/people/%s/" $person.id | relURL }}">{{ $person.name.display }}</a>{{ end }}{{ end }}{{ end }}</div>
+</article><aside class="info-panel">
+  <h3>Institution</h3><dl><dt>Type</dt><dd>{{ .type }}</dd><dt>Country</dt><dd>{{ $i.country }}</dd>{{ with $i.city }}<dt>City</dt><dd>{{ . }}{{ with $i.state }}, {{ . }}{{ end }}</dd>{{ end }}</dl>
+  {{ with $i.links.website }}<h3>Website</h3><a class="learn" target="_blank" rel="noopener" href="{{ . }}">Official website →</a>{{ end }}
+  <h3>Funding</h3>{{ range $grants }}{{ if eq .funder $i.id }}<p><strong>{{ .title }}</strong><br>{{ .grant_number }}</p>{{ end }}{{ end }}
+</aside></div></section>

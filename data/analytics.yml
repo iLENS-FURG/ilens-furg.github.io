@@ -1,0 +1,3 @@
+enabled: false
+provider: plausible
+domain: ilens.furg.br

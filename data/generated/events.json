@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ixpert-imc-2026",
+    "title": "IXPert at ACM IMC 2026",
+    "type": "conference",
+    "start": "2026-09-20",
+    "end": "2026-09-24",
+    "project": "ixpert",
+    "people": [
+      "pedro-marcos"
+    ],
+    "status": "completed",
+    "links": {
+      "website": "https://www.acm.org/"
+    }
+  }
+]

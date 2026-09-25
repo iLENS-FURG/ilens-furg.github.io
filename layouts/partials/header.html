@@ -1,0 +1,16 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="iLENS home">
+      <img src="{{ "images/logo-mark.svg" | relURL }}" alt="" width="31" height="31"><span class="brand-word">iLENS</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      {{ range site.Menus.main }}<a href="{{ .URL | relURL }}"{{ if eq $.RelPermalink (.URL | relURL) }} aria-current="page"{{ end }}>{{ .Name }}</a>{{ end }}
+    </nav>
+    <div class="nav-tools">
+      <a class="nav-search" href="{{ "/search/" | relURL }}" aria-label="Search">⌕</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" data-theme-toggle>◐</button>
+      <button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false" data-mobile-menu>☰</button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "baseline-001",
+    "persistent_id": "ilens:evidence:baseline-001",
+    "title": "IXP depeering baseline result",
+    "claim": "claim-ixp-depeering-001",
+    "experiment": "ixp-depeering-baseline",
+    "dataset": "ixpert-measurements",
+    "dataset_version": "1.0.0",
+    "status": "planned",
+    "result": {
+      "summary": "Baseline result pending execution.",
+      "metrics": {}
+    },
+    "provenance": {
+      "source_type": "experiment",
+      "source_id": "ixp-depeering-baseline",
+      "processing_version": "v9",
+      "retrieved_at": "2026-09-24"
+    }
+  }
+]

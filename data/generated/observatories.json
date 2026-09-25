@@ -1,0 +1,138 @@
+{
+  "version": "v12",
+  "count": 4,
+  "data": [
+    {
+      "id": "interconnection-observatory",
+      "persistent_id": "ilens:observatory:interconnection-observatory",
+      "title": "Internet Interconnection Observatory",
+      "subtitle": "Tracking IXPs, peering relationships, and interconnection structure.",
+      "status": "planned",
+      "areas": [
+        "interconnection",
+        "ixps"
+      ],
+      "projects": [
+        "ixpert",
+        "ixp-depeering"
+      ],
+      "research_questions": [
+        "ixpert-rq1",
+        "ixpert-rq2"
+      ],
+      "sources": [
+        "PeeringDB",
+        "IXP Manager",
+        "IX.br"
+      ],
+      "update_frequency": "weekly",
+      "methodology": "Cross-source normalization and longitudinal graph analysis.",
+      "last_update": null,
+      "metrics": [
+        "active_ixps",
+        "peering_relationships",
+        "countries",
+        "cross_ixp_links",
+        "observed_changes"
+      ]
+    },
+    {
+      "id": "ixp-depeering-observatory",
+      "persistent_id": "ilens:observatory:ixp-depeering-observatory",
+      "title": "IXP Depeering Observatory",
+      "subtitle": "Continuous measurement of depeering and interconnection structure.",
+      "status": "planned",
+      "areas": [
+        "ixps",
+        "interconnection",
+        "routing"
+      ],
+      "projects": [
+        "ixp-depeering"
+      ],
+      "research_questions": [
+        "ixp-depeering-rq1",
+        "ixp-depeering-rq2"
+      ],
+      "sources": [
+        "RIPE RIS",
+        "RouteViews",
+        "PeeringDB"
+      ],
+      "update_frequency": "weekly",
+      "methodology": "Longitudinal BGP and interconnection analysis.",
+      "last_update": null,
+      "metrics": [
+        "depeering_events",
+        "affected_ixps",
+        "affected_asns",
+        "route_visibility_change",
+        "transit_dependency_change"
+      ]
+    },
+    {
+      "id": "routing-stability-observatory",
+      "persistent_id": "ilens:observatory:routing-stability-observatory",
+      "title": "Routing Stability Observatory",
+      "subtitle": "Detecting and characterizing candidate routing instability events.",
+      "status": "planned",
+      "areas": [
+        "routing",
+        "measurement"
+      ],
+      "projects": [
+        "routing-security"
+      ],
+      "research_questions": [
+        "routing-security-rq1"
+      ],
+      "sources": [
+        "RIPE RIS",
+        "RouteViews"
+      ],
+      "update_frequency": "daily",
+      "methodology": "Candidate-event detection followed by human validation.",
+      "last_update": null,
+      "metrics": [
+        "instability_events",
+        "affected_prefixes",
+        "affected_asns",
+        "duration",
+        "geographic_scope"
+      ]
+    },
+    {
+      "id": "rpki-observatory",
+      "persistent_id": "ilens:observatory:rpki-observatory",
+      "title": "RPKI Observatory",
+      "subtitle": "Monitoring routing security deployment and anomalies.",
+      "status": "planned",
+      "areas": [
+        "routing-security",
+        "measurement"
+      ],
+      "projects": [
+        "routing-security"
+      ],
+      "research_questions": [
+        "routing-security-rq1",
+        "routing-security-rq2"
+      ],
+      "sources": [
+        "RPKI repositories",
+        "RIPE RIS",
+        "RouteViews"
+      ],
+      "update_frequency": "daily",
+      "methodology": "ROA and routing-state analysis with reproducible snapshots.",
+      "last_update": null,
+      "metrics": [
+        "valid_ratio",
+        "invalid_ratio",
+        "not_found_ratio",
+        "roa_changes",
+        "candidate_anomalies"
+      ]
+    }
+  ]
+}

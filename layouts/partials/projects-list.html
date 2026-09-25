@@ -1,0 +1,29 @@
+{{ $items := site.Data.generated.projects | default (slice) }}
+<div class="project-role-intro">
+  <div>
+    <span class="eyebrow blue">Projects</span>
+    <h2>Research we lead and research we do with others.</h2>
+  </div>
+  <p>Each project explains what we study, who is involved, and the research outputs available so far.</p>
+</div>
+<div class="project-role-filters" data-project-role-filter>
+  <button class="role-filter active" type="button" data-role="all">All projects</button>
+  <button class="role-filter" type="button" data-role="lead">iLENS-led</button>
+  <button class="role-filter" type="button" data-role="collaborator">Collaborative</button>
+</div>
+<div class="filter-bar"><input data-filter-input placeholder="Search projects…" aria-label="Search projects"><span class="filter-count" data-filter-count></span></div>
+<div class="cards project-grid">
+  {{ range $items }}
+  {{ $role := default "lead" .research_role.type }}
+  <a data-filter-item data-role="{{ $role }}" data-search="{{ .title }} {{ .subtitle }} {{ delimit .areas " " }}" class="project-card project-card-v10" href="{{ printf "/projects/%s/" .id | relURL }}">
+    <div class="project-image" style="background-image:url('{{ .website.hero | relURL }}')"></div>
+    <div class="card-body">
+      <div class="project-role-badge {{ $role }}">{{ if eq $role "lead" }}iLENS-led{{ else if eq $role "co-lead" }}iLENS co-led{{ else if eq $role "collaborator" }}Collaborative{{ else }}Partner initiative{{ end }}</div>
+      <div class="chips">{{ range first 3 .areas }}<span>{{ replace . "-" " " }}</span>{{ end }}</div>
+      <h3>{{ .title }}</h3><p>{{ .subtitle }}</p>
+      <span class="learn">Explore project →</span>
+    </div>
+  </a>
+  {{ end }}
+</div>
+<div class="search-empty" data-filter-empty>No projects match your search.</div>

@@ -1,0 +1,22 @@
+{
+  "version": "v12",
+  "count": 1,
+  "data": [
+    {
+      "id": "claim-ixp-depeering-001",
+      "persistent_id": "ilens:claim:ixp-depeering-001",
+      "title": "Depeering can change the interconnection structure observed at an IXP.",
+      "project": "ixp-depeering",
+      "research_question": "ixp-depeering-rq1",
+      "status": "candidate",
+      "evidence": [
+        {
+          "experiment": "ixp-depeering-baseline",
+          "result": "baseline-001",
+          "dataset": "ixpert-measurements"
+        }
+      ],
+      "publication": null
+    }
+  ]
+}

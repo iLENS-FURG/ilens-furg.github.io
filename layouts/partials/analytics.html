@@ -1,0 +1,1 @@
+{{ $cfg := site.Data.analytics }}{{ if and $cfg.enabled (eq $cfg.provider "plausible") }}<script defer data-domain="{{ $cfg.domain }}" src="https://plausible.io/js/script.js"></script>{{ end }}
